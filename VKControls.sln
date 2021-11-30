@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKControls", "VKControls\VKControls.csproj", "{5966A0ED-44DB-464E-B35C-D7B366C9DF93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{7E95F86D-0439-4A27-A1B1-0CF63C783C50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5966A0ED-44DB-464E-B35C-D7B366C9DF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5966A0ED-44DB-464E-B35C-D7B366C9DF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5966A0ED-44DB-464E-B35C-D7B366C9DF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5966A0ED-44DB-464E-B35C-D7B366C9DF93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E95F86D-0439-4A27-A1B1-0CF63C783C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E95F86D-0439-4A27-A1B1-0CF63C783C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E95F86D-0439-4A27-A1B1-0CF63C783C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E95F86D-0439-4A27-A1B1-0CF63C783C50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F938987B-61FA-400B-B285-7BA550481EDB}
+	EndGlobalSection
+EndGlobal
