@@ -12,9 +12,15 @@ namespace VKControls.TextBox
 {
     public partial class FlatTextBox : UserControl
     {
+        protected const short offset = 1;
+        protected const short txtOffset = 2;
+
+        private int prevTextBoxHeight;
+
         public FlatTextBox()
         {
             InitializeComponent();
+            prevTextBoxHeight = txtText.Height;
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -39,7 +45,11 @@ namespace VKControls.TextBox
         public Font LabelFont
         {
             get => txtText.Font;
-            set => txtText.Font = value;
+            set
+            {
+                txtText.Font = value;
+                OnLabelFontChanged();
+            }
         }
 
         private void txtText_MouseDown(object sender, MouseEventArgs e)
@@ -55,6 +65,13 @@ namespace VKControls.TextBox
         private void txtText_Enter(object sender, EventArgs e)
         {
             panel.BackColor = Color.Purple;
+        }
+
+        private void OnLabelFontChanged()
+        {
+            this.panel.Top = txtText.Height + txtOffset;
+            this.Height = this.panel.Top + this.panel.Height + offset;
+            prevTextBoxHeight = txtText.Height;
         }
     }
 }

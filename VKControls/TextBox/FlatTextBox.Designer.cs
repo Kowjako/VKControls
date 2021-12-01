@@ -36,7 +36,7 @@ namespace VKControls.TextBox
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Silver;
-            this.panel.Location = new System.Drawing.Point(0, 22);
+            this.panel.Location = new System.Drawing.Point(0, 20);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(284, 2);
             this.panel.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace VKControls.TextBox
             this.Controls.Add(this.txtText);
             this.Controls.Add(this.panel);
             this.Name = "FlatTextBox";
-            this.Size = new System.Drawing.Size(286, 27);
+            this.Size = new System.Drawing.Size(287, 23);
             this.Click += new System.EventHandler(this.textBox1_Click);
             this.Enter += new System.EventHandler(this.txtText_Enter);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseDown);
