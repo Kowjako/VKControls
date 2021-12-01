@@ -29,42 +29,45 @@ namespace VKControls.TextBox
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel = new System.Windows.Forms.Panel();
+            this.txtText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(0, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 2);
-            this.panel1.TabIndex = 1;
+            this.panel.BackColor = System.Drawing.Color.Silver;
+            this.panel.Location = new System.Drawing.Point(0, 22);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(284, 2);
+            this.panel.TabIndex = 1;
             // 
-            // textBox1
+            // txtText
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(3, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(281, 13);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.txtText.BackColor = System.Drawing.SystemColors.Control;
+            this.txtText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtText.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtText.Location = new System.Drawing.Point(1, 2);
+            this.txtText.Name = "txtText";
+            this.txtText.Size = new System.Drawing.Size(281, 16);
+            this.txtText.TabIndex = 2;
+            this.txtText.Click += new System.EventHandler(this.textBox1_Click);
+            this.txtText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseDown);
             // 
             // FlatTextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtText);
+            this.Controls.Add(this.panel);
             this.Name = "FlatTextBox";
-            this.Size = new System.Drawing.Size(293, 40);
+            this.Size = new System.Drawing.Size(286, 27);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.TextBox txtText;
     }
 }

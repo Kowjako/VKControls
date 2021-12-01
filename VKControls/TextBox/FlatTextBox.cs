@@ -15,17 +15,36 @@ namespace VKControls.TextBox
         public FlatTextBox()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.SupportsTransparentBackColor |
-                ControlStyles.OptimizedDoubleBuffer |
-                ControlStyles.AllPaintingInWmPaint |
-                ControlStyles.ResizeRedraw |
-                ControlStyles.UserPaint, true);
-            BackColor = Color.Transparent;
         }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Focus();
+            txtText.Focus();
+        }
+
+        /* Przy tworzeniu kontrolki BackColor textbox'a ustawiamy na kolor rodzica */
+        protected override void OnCreateControl()
+        {
+            base.OnCreateControl();
+            txtText.BackColor = ParentForm.BackColor;
+        }
+
+        /* Gdy zmieniamy BackColor rodzica automatycznie zmieniamy kolor textBox'a */
+        protected override void OnBackColorChanged(EventArgs e)
+        {
+            base.OnBackColorChanged(e);
+            txtText.BackColor = Parent.BackColor;
+        }
+
+        public Font LabelFont
+        {
+            get => txtText.Font;
+            set => txtText.Font = value;
+        }
+
+        private void txtText_MouseDown(object sender, MouseEventArgs e)
+        {
+            panel.BackColor = Color.Purple;
         }
     }
 }
