@@ -32,6 +32,7 @@ namespace TestApp
             this.button1 = new System.Windows.Forms.Button();
             this.flatTextBox1 = new VKControls.TextBox.FlatTextBox();
             this.flatButton1 = new VKControls.Buttons.FlatButton();
+            this.flatTextBox2 = new VKControls.TextBox.FlatTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -68,12 +69,21 @@ namespace TestApp
             this.flatButton1.Size = new System.Drawing.Size(200, 170);
             this.flatButton1.TabIndex = 0;
             // 
+            // flatTextBox2
+            // 
+            this.flatTextBox2.LabelFont = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox2.Location = new System.Drawing.Point(124, 268);
+            this.flatTextBox2.Name = "flatTextBox2";
+            this.flatTextBox2.Size = new System.Drawing.Size(286, 27);
+            this.flatTextBox2.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flatTextBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flatTextBox1);
             this.Controls.Add(this.flatButton1);
@@ -88,6 +98,7 @@ namespace TestApp
         private VKControls.Buttons.FlatButton flatButton1;
         private VKControls.TextBox.FlatTextBox flatTextBox1;
         private System.Windows.Forms.Button button1;
+        private VKControls.TextBox.FlatTextBox flatTextBox2;
     }
 }
 

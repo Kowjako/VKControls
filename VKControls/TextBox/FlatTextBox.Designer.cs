@@ -40,6 +40,9 @@ namespace VKControls.TextBox
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(284, 2);
             this.panel.TabIndex = 1;
+            this.panel.Click += new System.EventHandler(this.textBox1_Click);
+            this.panel.Enter += new System.EventHandler(this.txtText_Enter);
+            this.panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseDown);
             // 
             // txtText
             // 
@@ -51,6 +54,8 @@ namespace VKControls.TextBox
             this.txtText.Size = new System.Drawing.Size(281, 16);
             this.txtText.TabIndex = 2;
             this.txtText.Click += new System.EventHandler(this.textBox1_Click);
+            this.txtText.Enter += new System.EventHandler(this.txtText_Enter);
+            this.txtText.Leave += new System.EventHandler(this.txtText_Leave);
             this.txtText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseDown);
             // 
             // FlatTextBox
@@ -61,6 +66,9 @@ namespace VKControls.TextBox
             this.Controls.Add(this.panel);
             this.Name = "FlatTextBox";
             this.Size = new System.Drawing.Size(286, 27);
+            this.Click += new System.EventHandler(this.textBox1_Click);
+            this.Enter += new System.EventHandler(this.txtText_Enter);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

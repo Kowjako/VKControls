@@ -46,5 +46,15 @@ namespace VKControls.TextBox
         {
             panel.BackColor = Color.Purple;
         }
+
+        private void txtText_Leave(object sender, EventArgs e)
+        {
+            panel.BackColor = Color.Silver;
+        }
+
+        private void txtText_Enter(object sender, EventArgs e)
+        {
+            panel.BackColor = Color.Purple;
+        }
     }
 }
