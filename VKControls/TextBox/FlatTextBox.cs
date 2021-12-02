@@ -79,9 +79,9 @@ namespace VKControls.TextBox
             switch (AnimationDirection)
             {
                 case AnimationDirections.Enter:
-                    if(r.Width/2 - AnimationOffset != 0)
+                    if(r.Width/2 - AnimationOffset > 0)
                     {
-                        AnimationOffset += 2;
+                        AnimationOffset += 10;
                         Rectangle transformedRectanlge = new Rectangle(r.Width/2 - AnimationOffset, 0, AnimationOffset * 2, 2);
                         panelGraphics.FillRectangle(new SolidBrush(Color.Purple), transformedRectanlge);
                     }
@@ -99,7 +99,7 @@ namespace VKControls.TextBox
                         Rectangle transformedRectanlgeBack = new Rectangle(r.Width - AnimationOffset, 0, r.Width, 2);
                         panelGraphics.FillRectangle(new SolidBrush(Color.Silver), transformedRectanlgeFront);
                         panelGraphics.FillRectangle(new SolidBrush(Color.Silver), transformedRectanlgeBack);
-                        AnimationOffset += 2;
+                        AnimationOffset += 10;
                     }
                     else
                     {
@@ -113,7 +113,6 @@ namespace VKControls.TextBox
             }
             
         }
-
 
         /* Hidden properties from UserControl */
         [Browsable(false)]

@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace VKControls
 {
-    interface Animations
-    {
-    }
-
     public enum AnimationDirections
     {
         Enter,
