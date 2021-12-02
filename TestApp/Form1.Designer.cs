@@ -30,8 +30,13 @@ namespace TestApp
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.flatTextBox1 = new VKControls.TextBox.FlatTextBox();
             this.flatButton1 = new VKControls.Buttons.FlatButton();
+            this.flatTextBox1 = new VKControls.TextBox.FlatTextBox();
+            this.flatTextBox2 = new VKControls.TextBox.FlatTextBox();
+            this.flatTextBox3 = new VKControls.TextBox.FlatTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -43,14 +48,6 @@ namespace TestApp
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // flatTextBox1
-            // 
-            this.flatTextBox1.LabelFont = new System.Drawing.Font("Lucida Bright", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatTextBox1.Location = new System.Drawing.Point(225, 335);
-            this.flatTextBox1.Name = "flatTextBox1";
-            this.flatTextBox1.Size = new System.Drawing.Size(287, 23);
-            this.flatTextBox1.TabIndex = 3;
             // 
             // flatButton1
             // 
@@ -68,18 +65,84 @@ namespace TestApp
             this.flatButton1.Size = new System.Drawing.Size(200, 170);
             this.flatButton1.TabIndex = 0;
             // 
+            // flatTextBox1
+            // 
+            this.flatTextBox1.AutoSize = true;
+            this.flatTextBox1.LabelFont = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox1.Location = new System.Drawing.Point(181, 346);
+            this.flatTextBox1.MinimumSize = new System.Drawing.Size(100, 21);
+            this.flatTextBox1.Name = "flatTextBox1";
+            this.flatTextBox1.Size = new System.Drawing.Size(340, 21);
+            this.flatTextBox1.TabIndex = 3;
+            // 
+            // flatTextBox2
+            // 
+            this.flatTextBox2.AutoSize = true;
+            this.flatTextBox2.LabelFont = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox2.Location = new System.Drawing.Point(181, 373);
+            this.flatTextBox2.MinimumSize = new System.Drawing.Size(100, 21);
+            this.flatTextBox2.Name = "flatTextBox2";
+            this.flatTextBox2.Size = new System.Drawing.Size(340, 21);
+            this.flatTextBox2.TabIndex = 4;
+            // 
+            // flatTextBox3
+            // 
+            this.flatTextBox3.AutoSize = true;
+            this.flatTextBox3.LabelFont = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox3.Location = new System.Drawing.Point(181, 400);
+            this.flatTextBox3.MinimumSize = new System.Drawing.Size(100, 21);
+            this.flatTextBox3.Name = "flatTextBox3";
+            this.flatTextBox3.Size = new System.Drawing.Size(340, 21);
+            this.flatTextBox3.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(71, 354);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 19);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(71, 377);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Surname";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(71, 402);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 19);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Age";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.flatTextBox3);
+            this.Controls.Add(this.flatTextBox2);
             this.Controls.Add(this.flatTextBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flatButton1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -88,6 +151,11 @@ namespace TestApp
         private VKControls.Buttons.FlatButton flatButton1;
         private System.Windows.Forms.Button button1;
         private VKControls.TextBox.FlatTextBox flatTextBox1;
+        private VKControls.TextBox.FlatTextBox flatTextBox2;
+        private VKControls.TextBox.FlatTextBox flatTextBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

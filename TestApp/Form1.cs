@@ -19,7 +19,7 @@ namespace TestApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.Green;
+            flatTextBox1.Font = new Font("Arial", 24, FontStyle.Regular);
         }
     }
 }

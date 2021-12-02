@@ -36,9 +36,12 @@ namespace VKControls.TextBox
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Silver;
-            this.panel.Location = new System.Drawing.Point(0, 20);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel.Location = new System.Drawing.Point(0, 19);
+            this.panel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(284, 2);
+            this.panel.Padding = new System.Windows.Forms.Padding(5);
+            this.panel.Size = new System.Drawing.Size(393, 2);
             this.panel.TabIndex = 1;
             this.panel.Click += new System.EventHandler(this.textBox1_Click);
             this.panel.Enter += new System.EventHandler(this.txtText_Enter);
@@ -48,10 +51,12 @@ namespace VKControls.TextBox
             // 
             this.txtText.BackColor = System.Drawing.SystemColors.Control;
             this.txtText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtText.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtText.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtText.Location = new System.Drawing.Point(1, 2);
+            this.txtText.Location = new System.Drawing.Point(0, 0);
+            this.txtText.Margin = new System.Windows.Forms.Padding(6);
             this.txtText.Name = "txtText";
-            this.txtText.Size = new System.Drawing.Size(281, 16);
+            this.txtText.Size = new System.Drawing.Size(393, 16);
             this.txtText.TabIndex = 2;
             this.txtText.Click += new System.EventHandler(this.textBox1_Click);
             this.txtText.Enter += new System.EventHandler(this.txtText_Enter);
@@ -62,10 +67,11 @@ namespace VKControls.TextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.txtText);
             this.Controls.Add(this.panel);
             this.Name = "FlatTextBox";
-            this.Size = new System.Drawing.Size(287, 23);
+            this.Size = new System.Drawing.Size(393, 21);
             this.Click += new System.EventHandler(this.textBox1_Click);
             this.Enter += new System.EventHandler(this.txtText_Enter);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtText_MouseDown);

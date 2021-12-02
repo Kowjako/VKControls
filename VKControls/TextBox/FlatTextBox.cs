@@ -12,15 +12,10 @@ namespace VKControls.TextBox
 {
     public partial class FlatTextBox : UserControl
     {
-        protected const short offset = 1;
-        protected const short txtOffset = 2;
-
-        private int prevTextBoxHeight;
-
         public FlatTextBox()
         {
             InitializeComponent();
-            prevTextBoxHeight = txtText.Height;
+            this.MinimumSize = new Size(100, Height);
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -48,7 +43,6 @@ namespace VKControls.TextBox
             set
             {
                 txtText.Font = value;
-                OnLabelFontChanged();
             }
         }
 
@@ -67,11 +61,8 @@ namespace VKControls.TextBox
             panel.BackColor = Color.Purple;
         }
 
-        private void OnLabelFontChanged()
-        {
-            this.panel.Top = txtText.Height + txtOffset;
-            this.Height = this.panel.Top + this.panel.Height + offset;
-            prevTextBoxHeight = txtText.Height;
-        }
+        /* Hidden properties from UserControl */
+        [Browsable(false)]
+        public new Font Font { get; set; }
     }
 }
