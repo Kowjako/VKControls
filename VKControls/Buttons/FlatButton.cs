@@ -116,11 +116,23 @@ namespace VKControls.Buttons
         private void btnImage_MouseDown(object sender, MouseEventArgs e)
         {
             txtName.Font = new Font(txtName.Font, FontStyle.Bold);
+            FirstGradientColor = Color.DarkGray;
+            SecondGradientColor = Color.WhiteSmoke;
+            InvalidateControl();
         }
 
         private void btnImage_MouseUp(object sender, MouseEventArgs e)
         {
             txtName.Font = new Font(txtName.Font, FontStyle.Regular);
+            FirstGradientColor = Color.Black;
+            SecondGradientColor = Color.White;
+            InvalidateControl();
+        }
+
+        private void InvalidateControl()
+        {
+            OnPaintBackground(new PaintEventArgs(this.CreateGraphics(), ClientRectangle));
+            this.Invalidate();
         }
     }
 }
