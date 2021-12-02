@@ -33,9 +33,9 @@ namespace TestApp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.flatTextBox2 = new VKControls.TextBox.FlatTextBox();
-            this.flatTextBox1 = new VKControls.TextBox.FlatTextBox();
             this.flatButton1 = new VKControls.Buttons.FlatButton();
+            this.flatTextBox1 = new VKControls.TextBox.FlatTextBox();
+            this.flatTextBox2 = new VKControls.TextBox.FlatTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -78,26 +78,6 @@ namespace TestApp
             this.label3.TabIndex = 8;
             this.label3.Text = "Age";
             // 
-            // flatTextBox2
-            // 
-            this.flatTextBox2.AutoSize = true;
-            this.flatTextBox2.LabelFont = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatTextBox2.Location = new System.Drawing.Point(201, 390);
-            this.flatTextBox2.MinimumSize = new System.Drawing.Size(100, 21);
-            this.flatTextBox2.Name = "flatTextBox2";
-            this.flatTextBox2.Size = new System.Drawing.Size(232, 31);
-            this.flatTextBox2.TabIndex = 10;
-            // 
-            // flatTextBox1
-            // 
-            this.flatTextBox1.AutoSize = true;
-            this.flatTextBox1.LabelFont = new System.Drawing.Font("Lucida Bright", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatTextBox1.Location = new System.Drawing.Point(201, 342);
-            this.flatTextBox1.MinimumSize = new System.Drawing.Size(100, 21);
-            this.flatTextBox1.Name = "flatTextBox1";
-            this.flatTextBox1.Size = new System.Drawing.Size(265, 31);
-            this.flatTextBox1.TabIndex = 9;
-            // 
             // flatButton1
             // 
             this.flatButton1.BorderButtonBrush = System.Drawing.Color.Red;
@@ -113,6 +93,26 @@ namespace TestApp
             this.flatButton1.SecondGradientColor = System.Drawing.Color.White;
             this.flatButton1.Size = new System.Drawing.Size(200, 170);
             this.flatButton1.TabIndex = 0;
+            // 
+            // flatTextBox1
+            // 
+            this.flatTextBox1.AutoSize = true;
+            this.flatTextBox1.LabelFont = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox1.Location = new System.Drawing.Point(172, 354);
+            this.flatTextBox1.MinimumSize = new System.Drawing.Size(100, 21);
+            this.flatTextBox1.Name = "flatTextBox1";
+            this.flatTextBox1.Size = new System.Drawing.Size(458, 21);
+            this.flatTextBox1.TabIndex = 9;
+            // 
+            // flatTextBox2
+            // 
+            this.flatTextBox2.AutoSize = true;
+            this.flatTextBox2.LabelFont = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox2.Location = new System.Drawing.Point(172, 381);
+            this.flatTextBox2.MinimumSize = new System.Drawing.Size(100, 21);
+            this.flatTextBox2.Name = "flatTextBox2";
+            this.flatTextBox2.Size = new System.Drawing.Size(458, 21);
+            this.flatTextBox2.TabIndex = 10;
             // 
             // Form1
             // 

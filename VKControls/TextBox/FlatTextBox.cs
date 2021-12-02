@@ -81,7 +81,7 @@ namespace VKControls.TextBox
                 case AnimationDirections.Enter:
                     if(r.Width/2 - AnimationOffset > 0)
                     {
-                        AnimationOffset += 10;
+                        AnimationOffset += r.Width / 20;
                         Rectangle transformedRectanlge = new Rectangle(r.Width/2 - AnimationOffset, 0, AnimationOffset * 2, 2);
                         panelGraphics.FillRectangle(new SolidBrush(Color.Purple), transformedRectanlge);
                     }
@@ -90,6 +90,7 @@ namespace VKControls.TextBox
                         AnimationTimer.Stop();
                         AnimationOffset = 0;
                         panel.BackColor = Color.Purple;
+                        panel.Invalidate();
                     }
                     break;
                 case AnimationDirections.Leave:
@@ -99,25 +100,23 @@ namespace VKControls.TextBox
                         Rectangle transformedRectanlgeBack = new Rectangle(r.Width - AnimationOffset, 0, r.Width, 2);
                         panelGraphics.FillRectangle(new SolidBrush(Color.Silver), transformedRectanlgeFront);
                         panelGraphics.FillRectangle(new SolidBrush(Color.Silver), transformedRectanlgeBack);
-                        AnimationOffset += 10;
+                        AnimationOffset += r.Width / 20;
                     }
                     else
                     {
                         AnimationTimer.Stop();
                         AnimationOffset = 0;
                         panel.BackColor = Color.Silver;
+                        panel.Invalidate();
                     }
                     break;
                 default:
                     break;
-            }
-            
+            } 
         }
 
         /* Hidden properties from UserControl */
         [Browsable(false)]
         public new Font Font { get; set; }
-
-        
     }
 }
