@@ -34,9 +34,9 @@ namespace TestApp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.flatButton1 = new VKControls.Buttons.FlatButton();
             this.flatButton2 = new VKControls.Buttons.FlatButton();
             this.flatTextBox1 = new VKControls.TextBox.FlatTextBox();
-            this.flatButton1 = new VKControls.Buttons.FlatButton();
             this.SuspendLayout();
             // 
             // button1
@@ -79,6 +79,22 @@ namespace TestApp
             this.label3.TabIndex = 8;
             this.label3.Text = "Age";
             // 
+            // flatButton1
+            // 
+            this.flatButton1.BorderButtonBrush = System.Drawing.Color.Black;
+            this.flatButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("flatButton1.ButtonImage")));
+            this.flatButton1.ButtonName = "Wykreuj bazę";
+            this.flatButton1.ButtonNameColor = System.Drawing.SystemColors.ButtonFace;
+            this.flatButton1.ButtonNameFont = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatButton1.FirstGradientColor = System.Drawing.Color.Red;
+            this.flatButton1.Location = new System.Drawing.Point(12, 12);
+            this.flatButton1.MaximumSize = new System.Drawing.Size(200, 170);
+            this.flatButton1.MinimumSize = new System.Drawing.Size(200, 170);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.SecondGradientColor = System.Drawing.Color.Maroon;
+            this.flatButton1.Size = new System.Drawing.Size(200, 170);
+            this.flatButton1.TabIndex = 11;
+            // 
             // flatButton2
             // 
             this.flatButton2.BorderButtonBrush = System.Drawing.Color.Black;
@@ -98,29 +114,14 @@ namespace TestApp
             // flatTextBox1
             // 
             this.flatTextBox1.AutoSize = true;
-            this.flatTextBox1.LabelFont = new System.Drawing.Font("Lucida Bright", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatTextBox1.LabelFont = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatTextBox1.LabelText = "";
-            this.flatTextBox1.Location = new System.Drawing.Point(449, 284);
+            this.flatTextBox1.Location = new System.Drawing.Point(304, 337);
             this.flatTextBox1.MinimumSize = new System.Drawing.Size(100, 21);
             this.flatTextBox1.Name = "flatTextBox1";
-            this.flatTextBox1.Size = new System.Drawing.Size(311, 27);
-            this.flatTextBox1.TabIndex = 9;
-            // 
-            // flatButton1
-            // 
-            this.flatButton1.BorderButtonBrush = System.Drawing.Color.Black;
-            this.flatButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("flatButton1.ButtonImage")));
-            this.flatButton1.ButtonName = "Wykreuj bazę";
-            this.flatButton1.ButtonNameColor = System.Drawing.SystemColors.ButtonFace;
-            this.flatButton1.ButtonNameFont = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatButton1.FirstGradientColor = System.Drawing.Color.Red;
-            this.flatButton1.Location = new System.Drawing.Point(12, 12);
-            this.flatButton1.MaximumSize = new System.Drawing.Size(200, 170);
-            this.flatButton1.MinimumSize = new System.Drawing.Size(200, 170);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.SecondGradientColor = System.Drawing.Color.Maroon;
-            this.flatButton1.Size = new System.Drawing.Size(200, 170);
-            this.flatButton1.TabIndex = 11;
+            this.flatTextBox1.PasswordChar = '\0';
+            this.flatTextBox1.Size = new System.Drawing.Size(100, 21);
+            this.flatTextBox1.TabIndex = 12;
             // 
             // Form1
             // 
@@ -128,15 +129,15 @@ namespace TestApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flatTextBox1);
             this.Controls.Add(this.flatButton1);
             this.Controls.Add(this.flatButton2);
-            this.Controls.Add(this.flatTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Testowa platforma";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,9 +148,9 @@ namespace TestApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private VKControls.TextBox.FlatTextBox flatTextBox1;
         private VKControls.Buttons.FlatButton flatButton2;
         private VKControls.Buttons.FlatButton flatButton1;
+        private VKControls.TextBox.FlatTextBox flatTextBox1;
     }
 }
 

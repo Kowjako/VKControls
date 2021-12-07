@@ -46,6 +46,12 @@ namespace VKControls.TextBox
             txtText.BackColor = Parent.BackColor;
         }
 
+        public char PasswordChar
+        {
+            set => txtText.PasswordChar = value;
+            get => txtText.PasswordChar;
+        }
+
         public Font LabelFont
         {
             get => txtText.Font;
@@ -119,6 +125,12 @@ namespace VKControls.TextBox
                 default:
                     break;
             } 
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            this.Height = this.txtText.Height + 5; /* prevent Heigth resizing by User */
         }
 
         /* Hidden properties from UserControl */
