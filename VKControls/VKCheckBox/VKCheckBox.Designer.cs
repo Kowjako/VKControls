@@ -40,12 +40,12 @@ namespace VKControls.VKCheckBox
             // tbTitle
             // 
             this.tbTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbTitle.Location = new System.Drawing.Point(30, 5);
+            this.tbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbTitle.Location = new System.Drawing.Point(30, 7);
             this.tbTitle.Margin = new System.Windows.Forms.Padding(0);
             this.tbTitle.Multiline = true;
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(153, 22);
+            this.tbTitle.Size = new System.Drawing.Size(153, 18);
             this.tbTitle.TabIndex = 0;
             this.tbTitle.Text = "Czy jest podatnikiem";
             // 

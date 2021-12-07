@@ -18,9 +18,12 @@ namespace VKControls.VKCheckBox
         public VKCheckBox()
         {
             InitializeComponent();
+            tbTitle.Cursor = Cursors.Default;   /* disable textbox cursor */
+            tbTitle.GotFocus += (sender, args) => ActiveControl = pbStatus; /* reset Focus to another control */
         }
 
-        [Browsable(true)]
+        /* Set designer visibility for this property */
+        [Browsable(true)] 
         public new string Text
         {
             get => tbTitle.Text;
@@ -33,6 +36,7 @@ namespace VKControls.VKCheckBox
             _isChecked = !_isChecked;
             pbStatus.Image = _isChecked ? (Image)Resources._checked
                                         : (Image)Resources._unchecked;
+            pbStatus.Refresh();
 
         }
 
@@ -44,6 +48,7 @@ namespace VKControls.VKCheckBox
             pbStatus.Width = pbStatus.Height;
             tbTitle.Left = pbStatus.Width + 5;
             tbTitle.Width = Width - pbStatus.Width - 10;
+            tbTitle.Top = 7;
             Invalidate();
         }
 

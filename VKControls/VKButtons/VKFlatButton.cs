@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace VKControls.Buttons
 {
-    public partial class FlatButton : UserControl
+    public partial class VKFlatButton : UserControl
     {
-        public FlatButton()
+        public VKFlatButton()
         {
             InitializeComponent();
             GradientMode = LinearGradientMode.ForwardDiagonal;

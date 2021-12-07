@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace VKControls.TextBox
 {
-    public partial class FlatTextBox : UserControl
+    public partial class VKFlatTextBox : UserControl
     {
         private readonly Timer AnimationTimer = new Timer { Interval = 1 };
         private AnimationDirections AnimationDirection;
         private Graphics panelGraphics;
         private int AnimationOffset = 0;
 
-        public FlatTextBox()
+        public VKFlatTextBox()
         {
             InitializeComponent();
             this.MinimumSize = new Size(100, Height);

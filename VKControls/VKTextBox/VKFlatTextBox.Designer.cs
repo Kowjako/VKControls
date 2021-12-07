@@ -1,7 +1,7 @@
 ﻿
 namespace VKControls.TextBox
 {
-    partial class FlatTextBox
+    partial class VKFlatTextBox
     {
         /// <summary> 
         /// Required designer variable.

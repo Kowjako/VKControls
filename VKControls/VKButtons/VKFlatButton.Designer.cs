@@ -1,7 +1,7 @@
 ﻿
 namespace VKControls.Buttons
 {
-    partial class FlatButton
+    partial class VKFlatButton
     {
         /// <summary> 
         /// Required designer variable.
