@@ -21,8 +21,8 @@ namespace VKControls.Buttons
 
         private LinearGradientMode GradientMode;
 
-        public Color FirstGradientColor { get; set; } = Color.Black;
-        public Color SecondGradientColor { get; set; } = Color.White;
+        public Color FirstGradientColor { get; set; }
+        public Color SecondGradientColor { get; set; }
 
         public string ButtonName
         {
@@ -116,16 +116,14 @@ namespace VKControls.Buttons
         private void btnImage_MouseDown(object sender, MouseEventArgs e)
         {
             txtName.Font = new Font(txtName.Font, FontStyle.Bold);
-            FirstGradientColor = Color.DarkGray;
-            SecondGradientColor = Color.WhiteSmoke;
+            SwapColors();
             InvalidateControl();
         }
 
         private void btnImage_MouseUp(object sender, MouseEventArgs e)
         {
             txtName.Font = new Font(txtName.Font, FontStyle.Regular);
-            FirstGradientColor = Color.Black;
-            SecondGradientColor = Color.White;
+            SwapColors();
             InvalidateControl();
         }
 
@@ -133,6 +131,13 @@ namespace VKControls.Buttons
         {
             OnPaintBackground(new PaintEventArgs(this.CreateGraphics(), ClientRectangle));
             this.Invalidate();
+        }
+
+        private void SwapColors()
+        {
+            var tmpColor = SecondGradientColor;
+            SecondGradientColor = FirstGradientColor;
+            FirstGradientColor = tmpColor;
         }
     }
 }

@@ -55,6 +55,12 @@ namespace VKControls.TextBox
             }
         }
 
+        public string LabelText
+        {
+            get => txtText.Text;
+            set => txtText.Text = value;
+        }
+
         private void txtText_MouseDown(object sender, MouseEventArgs e)
         {
             AnimationDirection = AnimationDirections.Enter;
