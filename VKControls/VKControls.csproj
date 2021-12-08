@@ -71,6 +71,12 @@
     <Compile Include="VKCheckBox\VKCheckBox.Designer.cs">
       <DependentUpon>VKCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="VKProgressBar\VKProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VKProgressBar\VKProgressBar.Designer.cs">
+      <DependentUpon>VKProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="VKTextBox\VKFlatTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VKCheckBox\VKCheckBox.resx">
       <DependentUpon>VKCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VKProgressBar\VKProgressBar.resx">
+      <DependentUpon>VKProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VKTextBox\VKFlatTextBox.resx">
       <DependentUpon>VKFlatTextBox.cs</DependentUpon>
