@@ -14,18 +14,36 @@ namespace VKControls.VKProgressBar
     {
         public int MaxValue { get; set; }
         public int MinValue { get; set; }
-        public int Value { get; set; }
-        public Color FillingColor { get; set; }
+
+        private event Action OnProgressChanged;
+
+        private int _value;
+        public int Value
+        {
+            get => _value;
+            set
+            {
+                _value = value;
+                OnProgressChanged();
+            }
+        }
+
+        public Color FillingColor
+        {
+            set => fillingPen = new Pen(new SolidBrush(value), 3);
+        }
 
         private const float startAngle = 45.0F;
         private Graphics g;
         private static Pen pen = new Pen(new SolidBrush(Color.Gray),3);
-        private static Pen fillingPen = new Pen(new SolidBrush(Color.Red), 3);
+        public Pen fillingPen;
 
         public VKProgressBar()
         {
             InitializeComponent();
             g = CreateGraphics();
+
+            OnProgressChanged += () => DrawProgress();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -37,20 +55,13 @@ namespace VKControls.VKProgressBar
         public void ReportProgress(int value)
         {
             if (value > MaxValue - MinValue) return;
-            Value = (int)((double)value / (MaxValue - MinValue)) * 100;
+            _value = (int)((double)value / (MaxValue - MinValue)) * 100;
             DrawProgress();
         }
 
         private void DrawProgress()
         {
-            g.DrawArc(fillingPen, new Rectangle(3, 3, Width - 6, Height - 6), startAngle, 0);
+            g.DrawArc(fillingPen, new Rectangle(3, 3, Width - 6, Height - 6), startAngle, _value / 360.0F);
         }
-
-
-
-        //protected override void OnPaintBackground(PaintEventArgs e)
-        //{
-        //    base.OnPaintBackground(e);
-        //}
     }
 }
