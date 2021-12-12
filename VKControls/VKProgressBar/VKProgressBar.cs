@@ -12,8 +12,8 @@ namespace VKControls.VKProgressBar
 {
     public partial class VKProgressBar : UserControl
     {
-        public int MaxValue { get; set; }
-        public int MinValue { get; set; }
+        public int MaxValue { get; set; } = 100;
+        public int MinValue { get; set; } = 0;
 
         private event Action OnProgressChanged;
 
@@ -23,26 +23,40 @@ namespace VKControls.VKProgressBar
             get => _value;
             set
             {
-                _value = value;
-                OnProgressChanged();
+                if (value >= MinValue && value <= MaxValue)
+                {
+                    _value = value;
+                    OnProgressChanged();
+                }
             }
         }
 
         public Color FillingColor
         {
-            set => fillingPen = new Pen(new SolidBrush(value), 3);
+            set
+            {
+                fillingPen = new Pen(new SolidBrush(value), 3);
+            }
+            get => fillingPen.Color;
         }
 
-        private const float startAngle = 45.0F;
+        public Color BarColor
+        {
+            get => pen.Color;
+            set 
+            {
+                pen = new Pen(new SolidBrush(value), 3);
+            }
+        }
+
+        private const float startAngle = 270.0F;
         private Graphics g;
-        private static Pen pen = new Pen(new SolidBrush(Color.Gray),3);
-        public Pen fillingPen;
+        private Pen pen = new Pen(new SolidBrush(Color.Black), 3), 
+                    fillingPen = new Pen(new SolidBrush(Color.Gainsboro), 3);
 
         public VKProgressBar()
         {
             InitializeComponent();
-            g = CreateGraphics();
-
             OnProgressChanged += () => DrawProgress();
         }
 
@@ -50,6 +64,16 @@ namespace VKControls.VKProgressBar
         {
             base.OnPaint(e);
             g.DrawEllipse(pen, new Rectangle(3, 3, Width - 6, Height - 6));
+            g.DrawArc(fillingPen, new Rectangle(3, 3, Width - 6, Height - 6), startAngle, (float)_value / 100 * 360F);
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            g = CreateGraphics();
+            g.DrawEllipse(pen, new Rectangle(3, 3, Width - 6, Height - 6));
+            lblProgress.Top = Height / 2 - lblProgress.Height / 2;
+            lblProgress.Left = Width / 2 - lblProgress.Width / 2;
         }
 
         public void ReportProgress(int value)
@@ -61,7 +85,8 @@ namespace VKControls.VKProgressBar
 
         private void DrawProgress()
         {
-            g.DrawArc(fillingPen, new Rectangle(3, 3, Width - 6, Height - 6), startAngle, _value / 360.0F);
+            lblProgress.Text = string.Format("{0} %", Math.Round((float)_value / (MaxValue - MinValue) * 100));
+            Invalidate();
         }
     }
 }
