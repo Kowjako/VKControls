@@ -1,7 +1,7 @@
 ﻿
-namespace VKControls.Buttons
+namespace VKControls.VKButtons
 {
-    partial class VKFlatButton
+    partial class VKFlatButtonWithImage
     {
         /// <summary> 
         /// Required designer variable.
@@ -47,7 +47,7 @@ namespace VKControls.Buttons
             this.btnImage.Location = new System.Drawing.Point(49, 24);
             this.btnImage.Name = "btnImage";
             this.btnImage.Size = new System.Drawing.Size(101, 100);
-            this.btnImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnImage.TabIndex = 0;
             this.btnImage.TabStop = false;
             this.btnImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImage_MouseDown);
@@ -101,7 +101,7 @@ namespace VKControls.Buttons
             this.panelRight.Size = new System.Drawing.Size(2, 166);
             this.panelRight.TabIndex = 5;
             // 
-            // FlatButton
+            // VKFlatButtonWithImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +113,7 @@ namespace VKControls.Buttons
             this.Controls.Add(this.btnImage);
             this.MaximumSize = new System.Drawing.Size(200, 170);
             this.MinimumSize = new System.Drawing.Size(200, 170);
-            this.Name = "FlatButton";
+            this.Name = "VKFlatButtonWithImage";
             this.Size = new System.Drawing.Size(200, 170);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImage_MouseDown);
             this.MouseEnter += new System.EventHandler(this.btnImage_MouseEnter);
@@ -122,7 +122,6 @@ namespace VKControls.Buttons
             this.Resize += new System.EventHandler(this.FlatButton_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.btnImage)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

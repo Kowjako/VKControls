@@ -45,13 +45,13 @@ namespace VKControls.VKProgressBar
             get => pen.Color;
             set 
             {
-                pen = new Pen(new SolidBrush(value), 3);
+                pen = new Pen(new SolidBrush(value), 2);
             }
         }
 
         private const float startAngle = 270.0F;
         private Graphics g;
-        private Pen pen = new Pen(new SolidBrush(Color.Black), 3), 
+        private Pen pen = new Pen(new SolidBrush(Color.Black), 2), 
                     fillingPen = new Pen(new SolidBrush(Color.Gainsboro), 3);
 
         public VKProgressBar()
@@ -88,5 +88,9 @@ namespace VKControls.VKProgressBar
             lblProgress.Text = string.Format("{0} %", Math.Round((float)_value / (MaxValue - MinValue) * 100));
             Invalidate();
         }
+
+        /* override property from base-class Control and hide it for Designer */
+        [Browsable(false)]
+        public override Image BackgroundImage { get; set; }
     }
 }

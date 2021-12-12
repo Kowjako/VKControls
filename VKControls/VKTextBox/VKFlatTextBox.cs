@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VKControls.TextBox
+namespace VKControls.VKTextBox
 {
     public partial class VKFlatTextBox : UserControl
     {

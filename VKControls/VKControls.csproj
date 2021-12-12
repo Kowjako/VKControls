@@ -53,17 +53,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animations.cs" />
-    <Compile Include="VKButtons\VKFlatButton.cs">
+    <Compile Include="VKButtons\VKFlatButtonWithImage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VKButtons\VKFlatButton.Designer.cs">
-      <DependentUpon>VKFlatButton.cs</DependentUpon>
+    <Compile Include="VKButtons\VKFlatButtonWithImage.Designer.cs">
+      <DependentUpon>VKFlatButtonWithImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VKButtons\VKRoundedButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VKButtons\VKRoundedButton.Designer.cs">
+      <DependentUpon>VKRoundedButton.cs</DependentUpon>
     </Compile>
     <Compile Include="VKCheckBox\VKCheckBox.cs">
       <SubType>UserControl</SubType>
@@ -85,12 +91,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="VKButtons\VKFlatButton.resx">
-      <DependentUpon>VKFlatButton.cs</DependentUpon>
+    <EmbeddedResource Include="VKButtons\VKFlatButtonWithImage.resx">
+      <DependentUpon>VKFlatButtonWithImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VKButtons\VKRoundedButton.resx">
+      <DependentUpon>VKRoundedButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VKCheckBox\VKCheckBox.resx">
       <DependentUpon>VKCheckBox.cs</DependentUpon>

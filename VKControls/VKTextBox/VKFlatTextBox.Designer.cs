@@ -1,5 +1,5 @@
 ﻿
-namespace VKControls.TextBox
+namespace VKControls.VKTextBox
 {
     partial class VKFlatTextBox
     {

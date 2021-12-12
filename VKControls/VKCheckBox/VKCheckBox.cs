@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace VKControls.VKCheckBox
 
         /* Set designer visibility for this property */
         [Browsable(true)] 
-        public new string Text
+        public override string Text
         {
             get => tbTitle.Text;
             set => tbTitle.Text = value;

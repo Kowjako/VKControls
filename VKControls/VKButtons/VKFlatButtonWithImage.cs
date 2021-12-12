@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VKControls.Buttons
+namespace VKControls.VKButtons
 {
-    public partial class VKFlatButton : UserControl
+    public partial class VKFlatButtonWithImage : UserControl
     {
-        public VKFlatButton()
+        public VKFlatButtonWithImage()
         {
             InitializeComponent();
             GradientMode = LinearGradientMode.ForwardDiagonal;
