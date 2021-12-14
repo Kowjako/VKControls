@@ -44,37 +44,37 @@ namespace TestApp
             // vkRoundedButton3
             // 
             this.vkRoundedButton3.Caption = "button1";
-            this.vkRoundedButton3.CornerRadius = 20;
-            this.vkRoundedButton3.Location = new System.Drawing.Point(104, 369);
+            this.vkRoundedButton3.CornerRadius = 10;
+            this.vkRoundedButton3.Location = new System.Drawing.Point(232, 408);
             this.vkRoundedButton3.Name = "vkRoundedButton3";
-            this.vkRoundedButton3.Size = new System.Drawing.Size(203, 80);
+            this.vkRoundedButton3.Size = new System.Drawing.Size(357, 150);
             this.vkRoundedButton3.TabIndex = 2;
             // 
             // vkRoundedButton2
             // 
             this.vkRoundedButton2.Caption = "button1";
-            this.vkRoundedButton2.CornerRadius = 20;
-            this.vkRoundedButton2.Location = new System.Drawing.Point(336, 131);
+            this.vkRoundedButton2.CornerRadius = 10;
+            this.vkRoundedButton2.Location = new System.Drawing.Point(194, 317);
             this.vkRoundedButton2.Name = "vkRoundedButton2";
-            this.vkRoundedButton2.Size = new System.Drawing.Size(549, 257);
+            this.vkRoundedButton2.Size = new System.Drawing.Size(226, 33);
             this.vkRoundedButton2.TabIndex = 1;
             // 
             // vkRoundedButton1
             // 
             this.vkRoundedButton1.Caption = "button1";
-            this.vkRoundedButton1.CornerRadius = 20;
-            this.vkRoundedButton1.Location = new System.Drawing.Point(313, 325);
+            this.vkRoundedButton1.CornerRadius = 10;
+            this.vkRoundedButton1.Location = new System.Drawing.Point(232, 395);
             this.vkRoundedButton1.Name = "vkRoundedButton1";
-            this.vkRoundedButton1.Size = new System.Drawing.Size(161, 63);
+            this.vkRoundedButton1.Size = new System.Drawing.Size(207, 45);
             this.vkRoundedButton1.TabIndex = 0;
             // 
             // vkRoundedButton4
             // 
             this.vkRoundedButton4.Caption = "button1";
-            this.vkRoundedButton4.CornerRadius = 10;
-            this.vkRoundedButton4.Location = new System.Drawing.Point(234, 331);
+            this.vkRoundedButton4.CornerRadius = 20;
+            this.vkRoundedButton4.Location = new System.Drawing.Point(382, 305);
             this.vkRoundedButton4.Name = "vkRoundedButton4";
-            this.vkRoundedButton4.Size = new System.Drawing.Size(439, 164);
+            this.vkRoundedButton4.Size = new System.Drawing.Size(207, 45);
             this.vkRoundedButton4.TabIndex = 3;
             // 
             // Form1

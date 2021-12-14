@@ -35,7 +35,7 @@ namespace VKControls.VKButtons
             set => mainPanel.BackColor = value;
         }
 
-        public int CornerRadius { get; set; } = 10;
+        public int CornerRadius { get; set; } = 20;
 
         public event Action OnFontOrResizeChanged;
 
@@ -65,15 +65,18 @@ namespace VKControls.VKButtons
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
             g = mainPanel.CreateGraphics();
+            g.SmoothingMode = SmoothingMode.HighQuality;
             g.FillRectangle(new SolidBrush(BackColor), mainPanel.ClientRectangle);
-            g.DrawArc(new Pen(new SolidBrush(Color.Black)),
-                              new Rectangle(0, 0, CornerRadius * 2, CornerRadius * 2), 180F, 90F);
-            g.DrawArc(new Pen(new SolidBrush(Color.Black)),
-                              new Rectangle(Width - CornerRadius * 2, 0, CornerRadius * 2, CornerRadius * 2), 270F, 90F);
-            g.DrawArc(new Pen(new SolidBrush(Color.Black)),
-                              new Rectangle(Width - CornerRadius * 2, Height - CornerRadius * 2, CornerRadius * 2, CornerRadius * 2), 0F, 90F);
-            g.DrawArc(new Pen(new SolidBrush(Color.Black)),
-                              new Rectangle(0, Height - CornerRadius * 2, CornerRadius * 2, CornerRadius * 2), 90F, 90F);
+
+            var path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(0, 0, CornerRadius * 2, CornerRadius * 2, 180F, 90F);
+            path.AddArc(Width - CornerRadius * 2 - 3, 0, CornerRadius * 2, CornerRadius * 2, 270F, 90F);
+            path.AddArc(Width - CornerRadius * 2 - 3, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 0F, 90F);
+            path.AddArc(0, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 90F, 90F);
+            path.CloseFigure();
+            g.DrawPath(new Pen(Color.Black), path);
+
         }
 
         private void mainPanel_BackColorChanged(object sender, EventArgs e)
