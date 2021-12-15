@@ -16,7 +16,11 @@ namespace VKControls.VKButtons
         public string Caption
         {
             get => lblCaption.Text;
-            set => lblCaption.Text = value;
+            set
+            {
+                lblCaption.Text = value;
+                OnFontOrResizeChanged?.Invoke();
+            }
         }
 
         public new Font Font
@@ -29,17 +33,48 @@ namespace VKControls.VKButtons
             }
         }
 
-        public new Color BackColor
+        [Browsable(false)]
+        public new Color BackColor { get; set; } = Color.Transparent;
+
+        private int _cornerRadius = 20;
+        public int CornerRadius
         {
-            get => mainPanel.BackColor;
-            set => mainPanel.BackColor = value;
+            get => _cornerRadius;
+            set
+            {
+                _cornerRadius = value;
+                mainPanel.Invalidate();
+            }
         }
 
-        public int CornerRadius { get; set; } = 20;
+        private Color _borderColor;
+        public Color BorderColor
+        {
+            get => _borderColor;
+            set
+            {
+                _borderColor = value;
+                borderPen.Color = value;
+            }
+        }
+
+        private Color _buttonColor;
+        public Color ButtonColor
+        {
+            get => _buttonColor;
+            set
+            {
+                _buttonColor = value;
+                buttonPen.Color = value;
+            }
+        }
+
 
         public event Action OnFontOrResizeChanged;
 
         private Graphics g;
+        private Pen buttonPen = new Pen(new SolidBrush(Color.White)),
+                    borderPen = new Pen(new SolidBrush(Color.Purple), 2);
 
         public VKRoundedButton()
         {
@@ -75,13 +110,11 @@ namespace VKControls.VKButtons
             path.AddArc(Width - CornerRadius * 2 - 3, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 0F, 90F);
             path.AddArc(0, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 90F, 90F);
             path.CloseFigure();
-            g.DrawPath(new Pen(Color.Black), path);
+            g.FillPath(new SolidBrush(ButtonColor), path);
+            lblCaption.BackColor = Color.White;
+            g.DrawPath(borderPen, path);
+            lblCaption.BackColor = ButtonColor;
 
-        }
-
-        private void mainPanel_BackColorChanged(object sender, EventArgs e)
-        {
-            lblCaption.BackColor = mainPanel.BackColor;
         }
     }
 }

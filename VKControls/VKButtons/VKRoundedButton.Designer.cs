@@ -52,7 +52,6 @@ namespace VKControls.VKButtons
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(207, 45);
             this.mainPanel.TabIndex = 0;
-            this.mainPanel.BackColorChanged += new System.EventHandler(this.mainPanel_BackColorChanged);
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // VKRoundedButton
