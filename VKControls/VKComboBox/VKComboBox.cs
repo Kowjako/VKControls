@@ -85,6 +85,11 @@ namespace VKControls.VKComboBox
             selectedItemCaption.Text = Items.First();
         }
 
+        private void SelectedItemChanged(object itemKey)
+        {
+            selectedItemCaption.Text = Items[(itemKey as int?).Value];
+        }
+
         private void arrowBox_Click(object sender, EventArgs e)
         {
             var flp = new FlowLayoutPanel();
@@ -97,9 +102,11 @@ namespace VKControls.VKComboBox
             flp.WrapContents = false;
             flp.Height = 0;
 
+            var counter = 0;
             foreach(var item in Items)
             {
                 var panelItem = new Panel();
+                panelItem.Tag = counter++;
                 panelItem.Padding = new Padding(0);
                 panelItem.Margin = new Padding(0);
                 panelItem.Height = 22;
@@ -130,10 +137,12 @@ namespace VKControls.VKComboBox
                 };
                 panelItem.Click += delegate (object s, EventArgs args)
                 {
+                    SelectedItemChanged(panelItem.Tag);
                     Parent.Controls.RemoveByKey("dropDownList");
                 };
                 labelItem.Click += delegate (object s, EventArgs args)
                 {
+                    SelectedItemChanged(panelItem.Tag);
                     Parent.Controls.RemoveByKey("dropDownList");
                 };
 
