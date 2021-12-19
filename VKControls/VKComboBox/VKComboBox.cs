@@ -89,7 +89,7 @@ namespace VKControls.VKComboBox
         private void arrowBox_Click(object sender, EventArgs e)
         {
             var flp = new FlowLayoutPanel();
-            flp.Name = "dropDownList";
+            flp.Name = "DropDownList";
             flp.BorderStyle = BorderStyle.FixedSingle;
             flp.Left = Left;
             flp.Top = Top + Height;
@@ -134,7 +134,7 @@ namespace VKControls.VKComboBox
                 panelItem.Click += delegate (object s, EventArgs args)
                 {
                     SelectedItemChanged(panelItem.Tag);
-                    Parent.Controls.RemoveByKey("dropDownList");
+                    Parent.Controls.RemoveByKey("DropDownList");
                 };
                 labelItem.Click += delegate (object s, EventArgs args)
                 {
