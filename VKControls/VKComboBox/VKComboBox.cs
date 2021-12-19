@@ -46,9 +46,6 @@ namespace VKControls.VKComboBox
             }
         }
 
-
-
-
         public VKComboBox()
         {
             InitializeComponent();
