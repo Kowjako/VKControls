@@ -28,7 +28,6 @@ namespace VKControls.VKComboBox
         }
 
         private BindingList<object> DataSourceBindingList = new BindingList<object>();
-
         public object SelectedItem { get; set; }
         public int SelectedIndex { get; set; }
 
