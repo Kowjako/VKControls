@@ -102,11 +102,21 @@ namespace VKControls.VKComboBox
                 var panelItem = new Panel();
                 panelItem.Padding = new Padding(0);
                 panelItem.Margin = new Padding(0);
-                panelItem.Height = 20;
+                panelItem.Height = 22;
                 panelItem.Width = flp.Width;
+
+                var labelItem = new Label();
+                labelItem.Font = new Font(FontFamily.GenericSansSerif, 12.0F, FontStyle.Regular);
+                labelItem.Text = item.ToString();
+                labelItem.AutoSize = true;
+                panelItem.Controls.Add(labelItem);
 
                 /* Initialize events for all drop-down items */
                 panelItem.MouseEnter += delegate (object s, EventArgs args)
+                {
+                    panelItem.BackColor = Color.LightGray;
+                };
+                labelItem.MouseEnter += delegate (object s, EventArgs args)
                 {
                     panelItem.BackColor = Color.LightGray;
                 };
@@ -114,12 +124,20 @@ namespace VKControls.VKComboBox
                 {
                     panelItem.BackColor = flp.BackColor;
                 };
+                labelItem.MouseLeave += delegate (object s, EventArgs args)
+                {
+                    panelItem.BackColor = flp.BackColor;
+                };
                 panelItem.Click += delegate (object s, EventArgs args)
                 {
                     Parent.Controls.RemoveByKey("dropDownList");
                 };
+                labelItem.Click += delegate (object s, EventArgs args)
+                {
+                    Parent.Controls.RemoveByKey("dropDownList");
+                };
 
-                flp.Height += 20;
+                flp.Height += 22;
                 flp.Controls.Add(panelItem);
             }
 
