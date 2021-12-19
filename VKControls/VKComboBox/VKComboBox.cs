@@ -98,7 +98,7 @@ namespace VKControls.VKComboBox
             flp.WrapContents = false;
             flp.Height = 0;
 
-            var counter = 0;
+            var counter = 0; /* counter for Tag property */
             foreach(var item in Items)
             {
                 var panelItem = new Panel();
