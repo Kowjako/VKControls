@@ -31,5 +31,10 @@ namespace TestApp
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            vkComboBox1.Items.Add("hello");
+        }
     }
 }

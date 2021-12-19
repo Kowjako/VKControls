@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -25,6 +26,28 @@ namespace VKControls.VKComboBox
                 OnDataSourceSet();
             }
         }
+
+        private BindingList<object> DataSourceBindingList = new BindingList<object>();
+
+        public object SelectedItem { get; set; }
+        public int SelectedIndex { get; set; }
+
+        private Collection<string> _items = new Collection<string>();
+        public Collection<string> Items
+        {
+            get => _items;
+            set
+            {
+                if(value != null)
+                {
+                    _items = value;
+                    OnItemsSet();
+                }
+            }
+        }
+
+
+
 
         public VKComboBox()
         {
@@ -53,7 +76,55 @@ namespace VKControls.VKComboBox
 
         private void OnDataSourceSet()
         {
+            SelectedIndex = 0;
+            //selectedItemCaption.Text = (_dataSource.DataSource as IList<object>).First().ToString();
+        }
 
+        private void OnItemsSet()
+        {
+            selectedItemCaption.Text = Items.First();
+        }
+
+        private void arrowBox_Click(object sender, EventArgs e)
+        {
+            var flp = new FlowLayoutPanel();
+            flp.Name = "dropDownList";
+            flp.BorderStyle = BorderStyle.FixedSingle;
+            flp.Left = Left;
+            flp.Top = Top + Height;
+            flp.Width = selectItemPanel.Width + 4;
+            flp.FlowDirection = FlowDirection.TopDown;
+            flp.WrapContents = false;
+            flp.Height = 0;
+
+            foreach(var item in Items)
+            {
+                var panelItem = new Panel();
+                panelItem.Padding = new Padding(0);
+                panelItem.Margin = new Padding(0);
+                panelItem.Height = 20;
+                panelItem.Width = flp.Width;
+
+                /* Initialize events for all drop-down items */
+                panelItem.MouseEnter += delegate (object s, EventArgs args)
+                {
+                    panelItem.BackColor = Color.LightGray;
+                };
+                panelItem.MouseLeave += delegate (object s, EventArgs args)
+                {
+                    panelItem.BackColor = flp.BackColor;
+                };
+                panelItem.Click += delegate (object s, EventArgs args)
+                {
+                    Parent.Controls.RemoveByKey("dropDownList");
+                };
+
+                flp.Height += 20;
+                flp.Controls.Add(panelItem);
+            }
+
+            Parent.Controls.Add(flp);
+            flp.Show();
         }
     }
 }

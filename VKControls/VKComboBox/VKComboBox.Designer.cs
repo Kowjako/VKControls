@@ -113,6 +113,7 @@ namespace VKControls.VKComboBox
             this.arrowBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.arrowBox.TabIndex = 0;
             this.arrowBox.TabStop = false;
+            this.arrowBox.Click += new System.EventHandler(this.arrowBox_Click);
             this.arrowBox.MouseEnter += new System.EventHandler(this.arrowBox_MouseEnter);
             this.arrowBox.MouseLeave += new System.EventHandler(this.arrowBox_MouseLeave);
             // 
@@ -132,9 +133,10 @@ namespace VKControls.VKComboBox
             this.selectedItemCaption.Enabled = false;
             this.selectedItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.selectedItemCaption.Location = new System.Drawing.Point(5, 5);
+            this.selectedItemCaption.Multiline = true;
             this.selectedItemCaption.Name = "selectedItemCaption";
             this.selectedItemCaption.ReadOnly = true;
-            this.selectedItemCaption.Size = new System.Drawing.Size(200, 19);
+            this.selectedItemCaption.Size = new System.Drawing.Size(200, 20);
             this.selectedItemCaption.TabIndex = 4;
             // 
             // VKComboBox
