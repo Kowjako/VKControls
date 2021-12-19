@@ -13,6 +13,8 @@ namespace VKControls.VKButtons
 {
     public partial class VKRoundedButton : UserControl
     {
+        private GraphicsPath path;
+        private bool isMouseInside = false;
         public string Caption
         {
             get => lblCaption.Text;
@@ -97,19 +99,45 @@ namespace VKControls.VKButtons
             lblCaption.Top = Height / 2 - lblCaption.Height / 2;
         }
 
+        private void mainPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            var rX = mainPanel.Width / 2;
+            var rY = mainPanel.Height / 2;
+            var h = mainPanel.Height / 2;
+            var w = mainPanel.Width / 2;
+            if (Math.Pow(e.X - w, 2) / Math.Pow(rX, 2) + Math.Pow(e.Y - h, 2) / Math.Pow(rY, 2) <= 1 && !isMouseInside)
+            {
+                isMouseInside = !isMouseInside;
+                g?.FillPath(new SolidBrush(Color.White), path);
+                g?.DrawPath(borderPen, path);
+                lblCaption.BackColor = Color.White;
+            }
+        }
+
+        private void mainPanel_MouseLeave(object sender, EventArgs e)
+        {
+            if (!isMouseInside)
+            {
+                g?.FillPath(new SolidBrush(ButtonColor), path);
+                lblCaption.BackColor = ButtonColor;
+                isMouseInside = !isMouseInside;
+            }
+        }
+
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
             g = mainPanel.CreateGraphics();
             g.SmoothingMode = SmoothingMode.HighQuality;
             g.FillRectangle(new SolidBrush(BackColor), mainPanel.ClientRectangle);
 
-            var path = new GraphicsPath();
+            path = new GraphicsPath();
             path.StartFigure();
-            path.AddArc(0, 0, CornerRadius * 2, CornerRadius * 2, 180F, 90F);
-            path.AddArc(Width - CornerRadius * 2 - 3, 0, CornerRadius * 2, CornerRadius * 2, 270F, 90F);
+            path.AddArc(1, 1, CornerRadius * 2, CornerRadius * 2, 180F, 90F);
+            path.AddArc(Width - CornerRadius * 2 - 3, 1, CornerRadius * 2, CornerRadius * 2, 270F, 90F);
             path.AddArc(Width - CornerRadius * 2 - 3, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 0F, 90F);
-            path.AddArc(0, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 90F, 90F);
+            path.AddArc(1, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 90F, 90F);
             path.CloseFigure();
+
             g.FillPath(new SolidBrush(ButtonColor), path);
             lblCaption.BackColor = Color.White;
             g.DrawPath(borderPen, path);

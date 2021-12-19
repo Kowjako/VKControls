@@ -77,6 +77,12 @@
     <Compile Include="VKCheckBox\VKCheckBox.Designer.cs">
       <DependentUpon>VKCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="VKComboBox\VKComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VKComboBox\VKComboBox.Designer.cs">
+      <DependentUpon>VKComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="VKProgressBar\VKProgressBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <EmbeddedResource Include="VKCheckBox\VKCheckBox.resx">
       <DependentUpon>VKCheckBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VKComboBox\VKComboBox.resx">
+      <DependentUpon>VKComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VKProgressBar\VKProgressBar.resx">
       <DependentUpon>VKProgressBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,5 +126,6 @@
   <ItemGroup>
     <None Include="Resources\checked.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
