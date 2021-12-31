@@ -85,6 +85,22 @@ namespace VKControls.VKButtons
             }
         }
 
+        public new event EventHandler Click
+        {
+            add
+            {
+                base.Click += value;
+                txtName.Click += value;
+                btnImage.Click += value;
+            }
+            remove
+            {
+                base.Click -= value;
+                txtName.Click -= value;
+                btnImage.Click -= value;
+            }
+        }
+
         private void FlatButton_Resize(object sender, EventArgs e)
         {
             this.Invalidate();

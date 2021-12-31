@@ -30,26 +30,31 @@ namespace TestApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.vkRoundedButton1 = new VKControls.VKButtons.VKRoundedButton();
+            this.vkFlatButtonWithImage1 = new VKControls.VKButtons.VKFlatButtonWithImage();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // vkRoundedButton1
+            // vkFlatButtonWithImage1
             // 
-            this.vkRoundedButton1.BorderColor = System.Drawing.Color.Empty;
-            this.vkRoundedButton1.ButtonColor = System.Drawing.Color.Empty;
-            this.vkRoundedButton1.Caption = "button1";
-            this.vkRoundedButton1.CornerRadius = 20;
-            this.vkRoundedButton1.EnterColor = System.Drawing.Color.Empty;
-            this.vkRoundedButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.vkRoundedButton1.Location = new System.Drawing.Point(126, 436);
-            this.vkRoundedButton1.Name = "vkRoundedButton1";
-            this.vkRoundedButton1.Size = new System.Drawing.Size(207, 45);
-            this.vkRoundedButton1.TabIndex = 0;
+            this.vkFlatButtonWithImage1.BorderButtonBrush = System.Drawing.Color.Black;
+            this.vkFlatButtonWithImage1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("vkFlatButtonWithImage1.ButtonImage")));
+            this.vkFlatButtonWithImage1.ButtonName = "Angular 6";
+            this.vkFlatButtonWithImage1.ButtonNameColor = System.Drawing.SystemColors.ControlText;
+            this.vkFlatButtonWithImage1.ButtonNameFont = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vkFlatButtonWithImage1.FirstGradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.vkFlatButtonWithImage1.Location = new System.Drawing.Point(12, 12);
+            this.vkFlatButtonWithImage1.MaximumSize = new System.Drawing.Size(200, 170);
+            this.vkFlatButtonWithImage1.MinimumSize = new System.Drawing.Size(200, 170);
+            this.vkFlatButtonWithImage1.Name = "vkFlatButtonWithImage1";
+            this.vkFlatButtonWithImage1.SecondGradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.vkFlatButtonWithImage1.Size = new System.Drawing.Size(200, 170);
+            this.vkFlatButtonWithImage1.TabIndex = 0;
+            this.vkFlatButtonWithImage1.Click += new System.EventHandler(this.vkFlatButtonWithImage1_Click_1);
             // 
             // Form1
             // 
@@ -57,7 +62,7 @@ namespace TestApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1089, 696);
-            this.Controls.Add(this.vkRoundedButton1);
+            this.Controls.Add(this.vkFlatButtonWithImage1);
             this.Name = "Form1";
             this.Text = "Testowa platforma";
             this.ResumeLayout(false);
@@ -66,7 +71,7 @@ namespace TestApp
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton1;
+        private VKControls.VKButtons.VKFlatButtonWithImage vkFlatButtonWithImage1;
     }
 }
 

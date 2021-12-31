@@ -40,6 +40,22 @@ namespace VKControls.VKButtons
             }
         }
 
+        public new event EventHandler Click
+        {
+            add
+            {
+                base.Click += value;
+                mainPanel.Click += value;
+                lblCaption.Click += value;
+            }
+            remove
+            {
+                base.Click -= value;
+                mainPanel.Click -= value;
+                lblCaption.Click -= value;
+            }
+        }
+
         [Browsable(false)]
         public new Color BackColor { get; set; } = Color.Transparent;
 
@@ -100,8 +116,6 @@ namespace VKControls.VKButtons
                     borderPen = new Pen(new SolidBrush(Color.Purple), 2),
                     enterPen = new Pen(new SolidBrush(Color.Gray), 2);
 
-        private EventHandler ButtonClickHandler = (send, arg) => MessageBox.Show("HELLO");
-
         public VKRoundedButton()
         {
             InitializeComponent();
@@ -127,7 +141,7 @@ namespace VKControls.VKButtons
         {
             var (rx, ry) = (mainPanel.Width / 2, mainPanel.Height / 2);
             if(Math.Pow(e.X - rx, 2) / Math.Pow(rx, 2) +
-               Math.Pow(e.Y - ry, 2) / Math.Pow(ry, 2) <= 1.1)
+               Math.Pow(e.Y - ry, 2) / Math.Pow(ry, 2) <= 1)
             {
                 if (!_isMouseInside)
                 {

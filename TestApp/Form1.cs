@@ -31,20 +31,5 @@ namespace TestApp
         {
 
         }
-
-        private void vkRoundedButton1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("HELLO");
-        }
-
-        private void vkRoundedButton1_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("HELO");
-        }
-
-        private void vkFlatButtonWithImage1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("HELO");
-        }
     }
 }
