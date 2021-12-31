@@ -43,8 +43,6 @@ namespace VKControls.VKButtons
             this.lblCaption.Size = new System.Drawing.Size(43, 13);
             this.lblCaption.TabIndex = 0;
             this.lblCaption.Text = "button1";
-            this.lblCaption.MouseLeave += new System.EventHandler(this.mainPanel_MouseLeave);
-            this.lblCaption.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
             // 
             // mainPanel
             // 

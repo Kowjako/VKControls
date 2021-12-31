@@ -127,7 +127,7 @@ namespace VKControls.VKButtons
         {
             var (rx, ry) = (mainPanel.Width / 2, mainPanel.Height / 2);
             if(Math.Pow(e.X - rx, 2) / Math.Pow(rx, 2) +
-               Math.Pow(e.Y - ry, 2) / Math.Pow(ry, 2) <= 1)
+               Math.Pow(e.Y - ry, 2) / Math.Pow(ry, 2) <= 1.1)
             {
                 if (!_isMouseInside)
                 {
