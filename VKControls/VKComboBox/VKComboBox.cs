@@ -90,7 +90,7 @@ namespace VKControls.VKComboBox
             flp.Name = "DropDownList";
             flp.BorderStyle = BorderStyle.FixedSingle;
             flp.Left = Left;
-            flp.Top = Top + Height;
+            flp.Top = Top + Height - 1;
             flp.Width = selectItemPanel.Width + 4;
             //flp.FlowDirection = FlowDirection.TopDown;
             //flp.WrapContents = false;

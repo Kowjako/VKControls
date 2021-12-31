@@ -71,6 +71,7 @@ namespace VKControls.VKProgressBar
         {
             base.OnResize(e);
             g = CreateGraphics();
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             g.DrawEllipse(pen, new Rectangle(3, 3, Width - 6, Height - 6));
             lblProgress.Top = Height / 2 - lblProgress.Height / 2;
             lblProgress.Left = Width / 2 - lblProgress.Width / 2;
