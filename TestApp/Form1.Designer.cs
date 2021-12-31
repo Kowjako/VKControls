@@ -30,71 +30,48 @@ namespace TestApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.bsData = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.vkComboBox1 = new VKControls.VKComboBox.VKComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.vkFlatButtonWithImage1 = new VKControls.VKButtons.VKFlatButtonWithImage();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // timer1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 112);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
+            // vkFlatButtonWithImage1
             // 
-            this.button1.Location = new System.Drawing.Point(671, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // vkComboBox1
-            // 
-            this.vkComboBox1.DataSource = null;
-            this.vkComboBox1.Items = ((System.Collections.ObjectModel.Collection<string>)(resources.GetObject("vkComboBox1.Items")));
-            this.vkComboBox1.Location = new System.Drawing.Point(257, 167);
-            this.vkComboBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.vkComboBox1.Name = "vkComboBox1";
-            this.vkComboBox1.SelectedIndex = 0;
-            this.vkComboBox1.SelectedItem = null;
-            this.vkComboBox1.Size = new System.Drawing.Size(246, 31);
-            this.vkComboBox1.TabIndex = 0;
+            this.vkFlatButtonWithImage1.BorderButtonBrush = System.Drawing.Color.White;
+            this.vkFlatButtonWithImage1.ButtonImage = null;
+            this.vkFlatButtonWithImage1.ButtonName = "";
+            this.vkFlatButtonWithImage1.ButtonNameColor = System.Drawing.SystemColors.ControlText;
+            this.vkFlatButtonWithImage1.ButtonNameFont = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vkFlatButtonWithImage1.FirstGradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.vkFlatButtonWithImage1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.vkFlatButtonWithImage1.Location = new System.Drawing.Point(358, 214);
+            this.vkFlatButtonWithImage1.MaximumSize = new System.Drawing.Size(200, 170);
+            this.vkFlatButtonWithImage1.MinimumSize = new System.Drawing.Size(200, 170);
+            this.vkFlatButtonWithImage1.Name = "vkFlatButtonWithImage1";
+            this.vkFlatButtonWithImage1.SecondGradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.vkFlatButtonWithImage1.Size = new System.Drawing.Size(200, 170);
+            this.vkFlatButtonWithImage1.TabIndex = 0;
+            this.vkFlatButtonWithImage1.Click += new System.EventHandler(this.vkFlatButtonWithImage1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(890, 356);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.vkComboBox1);
+            this.ClientSize = new System.Drawing.Size(1089, 696);
+            this.Controls.Add(this.vkFlatButtonWithImage1);
             this.Name = "Form1";
             this.Text = "Testowa platforma";
-            ((System.ComponentModel.ISupportInitialize)(this.bsData)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton1;
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton2;
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton3;
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton4;
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton5;
-        private VKControls.VKButtons.VKRoundedButton vkRoundedButton6;
-        private System.Windows.Forms.BindingSource bsData;
-        private VKControls.VKComboBox.VKComboBox vkComboBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private VKControls.VKButtons.VKFlatButtonWithImage vkFlatButtonWithImage1;
     }
 }
 

@@ -13,8 +13,9 @@ namespace VKControls.VKButtons
 {
     public partial class VKRoundedButton : UserControl
     {
-        private GraphicsPath path;
-        private bool isMouseInside = false;
+
+        #region Properties
+
         public string Caption
         {
             get => lblCaption.Text;
@@ -25,11 +26,15 @@ namespace VKControls.VKButtons
             }
         }
 
-        public new Font Font
+        public override Font Font
         {
-            get => lblCaption.Font;
+            get
+            {
+                return base.Font;
+            }
             set
             {
+                base.Font = value;
                 lblCaption.Font = value;
                 OnFontOrResizeChanged?.Invoke();
             }
@@ -60,6 +65,19 @@ namespace VKControls.VKButtons
             }
         }
 
+        private Color _color;
+
+        public Color EnterColor
+        {
+            get => _color;
+            set
+            {
+                _color = value;
+                enterPen.Color = value;
+            }
+        }
+
+
         private Color _buttonColor;
         public Color ButtonColor
         {
@@ -71,12 +89,18 @@ namespace VKControls.VKButtons
             }
         }
 
+        #endregion
 
         public event Action OnFontOrResizeChanged;
 
         private Graphics g;
+        private bool _isMouseInside;
+        private GraphicsPath path;
         private Pen buttonPen = new Pen(new SolidBrush(Color.White)),
-                    borderPen = new Pen(new SolidBrush(Color.Purple), 2);
+                    borderPen = new Pen(new SolidBrush(Color.Purple), 2),
+                    enterPen = new Pen(new SolidBrush(Color.Gray), 2);
+
+        private EventHandler ButtonClickHandler = (send, arg) => MessageBox.Show("HELLO");
 
         public VKRoundedButton()
         {
@@ -101,26 +125,24 @@ namespace VKControls.VKButtons
 
         private void mainPanel_MouseMove(object sender, MouseEventArgs e)
         {
-            var rX = mainPanel.Width / 2;
-            var rY = mainPanel.Height / 2;
-            var h = mainPanel.Height / 2;
-            var w = mainPanel.Width / 2;
-            if (Math.Pow(e.X - w, 2) / Math.Pow(rX, 2) + Math.Pow(e.Y - h, 2) / Math.Pow(rY, 2) <= 1 && !isMouseInside)
+            var (rx, ry) = (mainPanel.Width / 2, mainPanel.Height / 2);
+            if(Math.Pow(e.X - rx, 2) / Math.Pow(rx, 2) +
+               Math.Pow(e.Y - ry, 2) / Math.Pow(ry, 2) <= 1)
             {
-                isMouseInside = !isMouseInside;
-                g?.FillPath(new SolidBrush(Color.White), path);
-                g?.DrawPath(borderPen, path);
-                lblCaption.BackColor = Color.White;
+                if (!_isMouseInside)
+                {
+                    g?.FillPath(new SolidBrush(enterPen.Color), path);
+                    g?.DrawPath(borderPen, path);
+                    lblCaption.BackColor = enterPen.Color;
+                    _isMouseInside = true;
+                }
             }
-        }
-
-        private void mainPanel_MouseLeave(object sender, EventArgs e)
-        {
-            if (!isMouseInside)
+            else
             {
-                g?.FillPath(new SolidBrush(ButtonColor), path);
-                lblCaption.BackColor = ButtonColor;
-                isMouseInside = !isMouseInside;
+                g?.FillPath(new SolidBrush(buttonPen.Color), path);
+                g?.DrawPath(borderPen, path);
+                lblCaption.BackColor = buttonPen.Color;
+                _isMouseInside = false;
             }
         }
 
@@ -133,16 +155,14 @@ namespace VKControls.VKButtons
             path = new GraphicsPath();
             path.StartFigure();
             path.AddArc(1, 1, CornerRadius * 2, CornerRadius * 2, 180F, 90F);
-            path.AddArc(Width - CornerRadius * 2 - 3, 1, CornerRadius * 2, CornerRadius * 2, 270F, 90F);
-            path.AddArc(Width - CornerRadius * 2 - 3, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 0F, 90F);
-            path.AddArc(1, Height - CornerRadius * 2 - 3, CornerRadius * 2, CornerRadius * 2, 90F, 90F);
+            path.AddArc(Width - CornerRadius * 2 - 2, 1, CornerRadius * 2, CornerRadius * 2, 270F, 90F);
+            path.AddArc(Width - CornerRadius * 2 - 2, Height - CornerRadius * 2 - 2, CornerRadius * 2, CornerRadius * 2, 0F, 90F);
+            path.AddArc(1, Height - CornerRadius * 2 - 2, CornerRadius * 2, CornerRadius * 2, 90F, 90F);
             path.CloseFigure();
 
             g.FillPath(new SolidBrush(ButtonColor), path);
-            lblCaption.BackColor = Color.White;
             g.DrawPath(borderPen, path);
             lblCaption.BackColor = ButtonColor;
-
         }
     }
 }

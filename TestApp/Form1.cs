@@ -32,9 +32,19 @@ namespace TestApp
 
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void vkRoundedButton1_Click(object sender, EventArgs e)
         {
-            vkComboBox1.Items.Add("hello");
+            MessageBox.Show("HELLO");
+        }
+
+        private void vkRoundedButton1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("HELO");
+        }
+
+        private void vkFlatButtonWithImage1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("HELO");
         }
     }
 }

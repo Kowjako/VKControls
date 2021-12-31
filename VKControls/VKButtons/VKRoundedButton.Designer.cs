@@ -55,7 +55,6 @@ namespace VKControls.VKButtons
             this.mainPanel.Size = new System.Drawing.Size(207, 45);
             this.mainPanel.TabIndex = 0;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
-            this.mainPanel.MouseLeave += new System.EventHandler(this.mainPanel_MouseLeave);
             this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
             // 
             // VKRoundedButton
