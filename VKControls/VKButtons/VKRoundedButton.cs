@@ -111,6 +111,7 @@ namespace VKControls.VKButtons
 
         private Graphics g;
         private bool _isMouseInside;
+
         private GraphicsPath path;
         private Pen buttonPen = new Pen(new SolidBrush(Color.White)),
                     borderPen = new Pen(new SolidBrush(Color.Purple), 2),

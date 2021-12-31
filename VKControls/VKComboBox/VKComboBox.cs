@@ -95,8 +95,9 @@ namespace VKControls.VKComboBox
             //flp.FlowDirection = FlowDirection.TopDown;
             //flp.WrapContents = false;
             flp.MaximumSize = new Size(Width, 22 * 5);
-            
-
+            flp.HorizontalScroll.Enabled = false;
+            flp.VerticalScroll.Visible = false;
+            flp.AutoScroll = true;
 
             var counter = 0; /* counter for Tag property */
             foreach(var item in Items)
