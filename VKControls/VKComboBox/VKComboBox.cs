@@ -14,7 +14,6 @@ namespace VKControls.VKComboBox
 {
     public partial class VKComboBox : UserControl
     {
-        private Graphics g;
 
         private BindingSource _dataSource;
         public BindingSource DataSource
@@ -37,7 +36,7 @@ namespace VKControls.VKComboBox
             get => _items;
             set
             {
-                if(value != null)
+                if(value != null && value.Any())
                 {
                     _items = value;
                     OnItemsSet();
@@ -52,9 +51,8 @@ namespace VKControls.VKComboBox
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            g = mainPanel.CreateGraphics();
-            g.DrawRectangle(new Pen(Color.Black, 2), mainPanel.ClientRectangle);
-            g.DrawLine(new Pen(Color.Black, 1), new Point(Width - arrowBox.Width - 2, 0), new Point(Width - arrowBox.Width - 2, Height));
+            base.OnPaint(e);
+            e.Graphics.DrawRectangle(new Pen(Color.Black, 5), mainPanel.ClientRectangle);
             selectedItemCaption.BackColor = BackColor;
         }
 
@@ -88,15 +86,17 @@ namespace VKControls.VKComboBox
 
         private void arrowBox_Click(object sender, EventArgs e)
         {
-            var flp = new FlowLayoutPanel();
+            var flp = new Panel();
             flp.Name = "DropDownList";
             flp.BorderStyle = BorderStyle.FixedSingle;
             flp.Left = Left;
             flp.Top = Top + Height;
             flp.Width = selectItemPanel.Width + 4;
-            flp.FlowDirection = FlowDirection.TopDown;
-            flp.WrapContents = false;
-            flp.Height = 0;
+            //flp.FlowDirection = FlowDirection.TopDown;
+            //flp.WrapContents = false;
+            flp.MaximumSize = new Size(Width, 22 * 5);
+            
+
 
             var counter = 0; /* counter for Tag property */
             foreach(var item in Items)
@@ -107,6 +107,8 @@ namespace VKControls.VKComboBox
                 panelItem.Margin = new Padding(0);
                 panelItem.Height = 22;
                 panelItem.Width = flp.Width;
+
+                panelItem.Dock = DockStyle.Top;
 
                 var labelItem = new Label();
                 labelItem.Font = new Font(FontFamily.GenericSansSerif, 12.0F, FontStyle.Regular);
@@ -139,7 +141,7 @@ namespace VKControls.VKComboBox
                 labelItem.Click += delegate (object s, EventArgs args)
                 {
                     SelectedItemChanged(panelItem.Tag);
-                    Parent.Controls.RemoveByKey("dropDownList");
+                    Parent.Controls.RemoveByKey("DropDownList");
                 };
 
                 flp.Height += 22;
@@ -148,6 +150,12 @@ namespace VKControls.VKComboBox
 
             Parent.Controls.Add(flp);
             flp.Show();
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+            /* Bedzie wywolane z OnPaint bo powoduje przerysowac caly Control */
+            e.Graphics.DrawLine(new Pen(Color.Black, 2), new Point(Width - arrowBox.Width - 2, 0), new Point(Width - arrowBox.Width - 2, Height));
         }
     }
 }

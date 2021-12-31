@@ -31,18 +31,18 @@ namespace VKControls.VKComboBox
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VKComboBox));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.arrowPanel = new System.Windows.Forms.Panel();
+            this.arrowBox = new System.Windows.Forms.PictureBox();
             this.selectItemPanel = new System.Windows.Forms.Panel();
+            this.selectedItemCaption = new System.Windows.Forms.TextBox();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
-            this.arrowBox = new System.Windows.Forms.PictureBox();
-            this.arrowPanel = new System.Windows.Forms.Panel();
-            this.selectedItemCaption = new System.Windows.Forms.TextBox();
             this.mainPanel.SuspendLayout();
-            this.selectItemPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowBox)).BeginInit();
             this.arrowPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.arrowBox)).BeginInit();
+            this.selectItemPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -50,56 +50,21 @@ namespace VKControls.VKComboBox
             this.mainPanel.Controls.Add(this.arrowPanel);
             this.mainPanel.Controls.Add(this.selectItemPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Location = new System.Drawing.Point(1, 1);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Padding = new System.Windows.Forms.Padding(1);
-            this.mainPanel.Size = new System.Drawing.Size(246, 31);
+            this.mainPanel.Size = new System.Drawing.Size(244, 29);
             this.mainPanel.TabIndex = 0;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
-            // selectItemPanel
+            // arrowPanel
             // 
-            this.selectItemPanel.Controls.Add(this.selectedItemCaption);
-            this.selectItemPanel.Controls.Add(this.bottomPanel);
-            this.selectItemPanel.Controls.Add(this.topPanel);
-            this.selectItemPanel.Controls.Add(this.rightPanel);
-            this.selectItemPanel.Controls.Add(this.leftPanel);
-            this.selectItemPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.selectItemPanel.Location = new System.Drawing.Point(1, 1);
-            this.selectItemPanel.Name = "selectItemPanel";
-            this.selectItemPanel.Size = new System.Drawing.Size(208, 29);
-            this.selectItemPanel.TabIndex = 1;
-            // 
-            // bottomPanel
-            // 
-            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomPanel.Location = new System.Drawing.Point(1, 28);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(206, 1);
-            this.bottomPanel.TabIndex = 3;
-            // 
-            // topPanel
-            // 
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(1, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(206, 1);
-            this.topPanel.TabIndex = 2;
-            // 
-            // rightPanel
-            // 
-            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(207, 0);
-            this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(1, 29);
-            this.rightPanel.TabIndex = 1;
-            // 
-            // leftPanel
-            // 
-            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(1, 29);
-            this.leftPanel.TabIndex = 0;
+            this.arrowPanel.Controls.Add(this.arrowBox);
+            this.arrowPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.arrowPanel.Location = new System.Drawing.Point(211, 0);
+            this.arrowPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.arrowPanel.Name = "arrowPanel";
+            this.arrowPanel.Size = new System.Drawing.Size(33, 29);
+            this.arrowPanel.TabIndex = 2;
             // 
             // arrowBox
             // 
@@ -117,27 +82,63 @@ namespace VKControls.VKComboBox
             this.arrowBox.MouseEnter += new System.EventHandler(this.arrowBox_MouseEnter);
             this.arrowBox.MouseLeave += new System.EventHandler(this.arrowBox_MouseLeave);
             // 
-            // arrowPanel
+            // selectItemPanel
             // 
-            this.arrowPanel.Controls.Add(this.arrowBox);
-            this.arrowPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.arrowPanel.Location = new System.Drawing.Point(212, 1);
-            this.arrowPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.arrowPanel.Name = "arrowPanel";
-            this.arrowPanel.Size = new System.Drawing.Size(33, 29);
-            this.arrowPanel.TabIndex = 2;
+            this.selectItemPanel.Controls.Add(this.selectedItemCaption);
+            this.selectItemPanel.Controls.Add(this.bottomPanel);
+            this.selectItemPanel.Controls.Add(this.topPanel);
+            this.selectItemPanel.Controls.Add(this.rightPanel);
+            this.selectItemPanel.Controls.Add(this.leftPanel);
+            this.selectItemPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.selectItemPanel.Location = new System.Drawing.Point(0, 0);
+            this.selectItemPanel.Name = "selectItemPanel";
+            this.selectItemPanel.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
+            this.selectItemPanel.Size = new System.Drawing.Size(208, 29);
+            this.selectItemPanel.TabIndex = 1;
             // 
             // selectedItemCaption
             // 
             this.selectedItemCaption.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.selectedItemCaption.Enabled = false;
             this.selectedItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.selectedItemCaption.Location = new System.Drawing.Point(5, 5);
+            this.selectedItemCaption.Location = new System.Drawing.Point(3, 4);
             this.selectedItemCaption.Multiline = true;
             this.selectedItemCaption.Name = "selectedItemCaption";
             this.selectedItemCaption.ReadOnly = true;
             this.selectedItemCaption.Size = new System.Drawing.Size(200, 20);
             this.selectedItemCaption.TabIndex = 4;
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomPanel.Location = new System.Drawing.Point(5, 27);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(198, 1);
+            this.bottomPanel.TabIndex = 3;
+            // 
+            // topPanel
+            // 
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(5, 1);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(198, 1);
+            this.topPanel.TabIndex = 2;
+            // 
+            // rightPanel
+            // 
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightPanel.Location = new System.Drawing.Point(203, 1);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(1, 27);
+            this.rightPanel.TabIndex = 1;
+            // 
+            // leftPanel
+            // 
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftPanel.Location = new System.Drawing.Point(4, 1);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(1, 27);
+            this.leftPanel.TabIndex = 0;
             // 
             // VKComboBox
             // 
@@ -146,12 +147,13 @@ namespace VKControls.VKComboBox
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "VKComboBox";
+            this.Padding = new System.Windows.Forms.Padding(1);
             this.Size = new System.Drawing.Size(246, 31);
             this.mainPanel.ResumeLayout(false);
+            this.arrowPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.arrowBox)).EndInit();
             this.selectItemPanel.ResumeLayout(false);
             this.selectItemPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.arrowBox)).EndInit();
-            this.arrowPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -23,12 +23,13 @@ namespace VKControls.VKCheckBox
             tbTitle.GotFocus += (sender, args) => ActiveControl = pbStatus; /* reset Focus to another control */
         }
 
-        /* Set designer visibility for this property */
-        [Browsable(true)] 
-        public override string Text
+        public string Title
         {
             get => tbTitle.Text;
-            set => tbTitle.Text = value;
+            set
+            {
+                tbTitle.Text = value;
+            }
         }
 
 
