@@ -29,6 +29,7 @@ namespace VKControls.VKStepProgressBar
             control.Invalidate();
         };
 
+        private Dictionary<int, StepState> States = new Dictionary<int, StepState>();
 
         private Collection<string> _stateNames = new Collection<string>();
         public Collection<string> StateNames
@@ -62,24 +63,14 @@ namespace VKControls.VKStepProgressBar
             InitializeComponent();
         }
 
-        public void AddStep(string caption)
-        {
-
-        }
-
-        public void ConfirmNextStep(int index)
-        {
-
-        }
-
-        public void DeclineStep(int index)
-        {
-
-        }
 
         public void SetStepState(int index, StepState state)
         {
-
+            if(!States.ContainsKey(index))
+            {
+                States.Add(index, state);
+                OnContentChanged(this);
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -89,12 +80,39 @@ namespace VKControls.VKStepProgressBar
             for (int i = 0; i < StatesCount; i++)
             {
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                
+                /* Draw ellipses */
                 e.Graphics.DrawEllipse(new Pen(new SolidBrush(Color.Gray), 2), new Rectangle(3 + xOffset, 3, 50, 50));
+                if(States.ContainsKey(i))
+                {
+                    var state = States[i];
+                    switch(state)
+                    {
+                        case StepState.Waiting:
+                            e.Graphics.DrawArc(new Pen(new SolidBrush(Color.Green), 10), new Rectangle(8 + xOffset, 8, 40, 40), 0F, 360F);
+                            break;
+                        case StepState.Done:
+                            e.Graphics.FillEllipse(new SolidBrush(Color.Purple), new Rectangle(3 + xOffset, 3, 50, 50));
+                            e.Graphics.DrawLines(new Pen(new SolidBrush(Color.White), 4), new Point[]
+                            {
+                                /* Drawing done mark */
+                                new Point(14 + xOffset, 26),
+                                new Point(26 + xOffset, 38),
+                                new Point(41 +xOffset, 18)
+                            });
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                /* Draw lines */
                 if (i != StatesCount - 1)
                 {
                     e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Gray), 2), new Point(53 + xOffset, 27), new Point(53 + xOffset + 70, 27));
                 }
 
+                /* Draw names */
                 if (_stateNames != null && _stateNames.Any())
                 {
                     e.Graphics.DrawString(_stateNames[i], new Font("Arial", 10), Brushes.Black, new RectangleF(3 + xOffset, 50, 50, 50),new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center});
