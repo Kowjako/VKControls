@@ -15,19 +15,25 @@ namespace VKControls.VKComboBox
     public partial class VKComboBox : UserControl
     {
 
-        private BindingSource _dataSource;
-        public BindingSource DataSource
+        private object _dataSource;
+
+        /* Ten atrybut pozwala podpinac BindingSource do DataSource */
+        [AttributeProvider(typeof(IListSource))]
+        public object DataSource
         {
             get => _dataSource;
             set
             {
-                _dataSource = value;
-                OnDataSourceSet();
+                if (value != null)
+                {
+                    _dataSource = value;
+                    OnDataSourceSet();
+                }
             }
         }
 
-        private BindingList<object> DataSourceBindingList = new BindingList<object>();
-        public object SelectedItem { get; set; }
+        [Browsable(false)]
+        public object SelectedItem => (_dataSource as IEnumerable<object>).ElementAt(SelectedIndex);
         public int SelectedIndex { get; set; }
 
         private Collection<string> _items = new Collection<string>();
@@ -44,9 +50,23 @@ namespace VKControls.VKComboBox
             }
         }
 
+        public override Font Font
+        {
+            get
+            {
+                return base.Font;
+            }
+            set
+            {
+                base.Font = value;
+                selectedItemCaption.Font = value;
+            }
+        }
+
         public VKComboBox()
         {
             InitializeComponent();
+            DataSource = new BindingSource();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -70,18 +90,24 @@ namespace VKControls.VKComboBox
 
         private void OnDataSourceSet()
         {
-            SelectedIndex = 0;
-            //selectedItemCaption.Text = (_dataSource.DataSource as IList<object>).First().ToString();
+            /* Pattern-matching */
+            if(_dataSource is IEnumerable<object> var)
+            {
+                Items = new Collection<string>(var.Select(x => x.ToString()).ToList());
+                SelectedIndex = 0;
+                selectedItemCaption.Text = var.First().ToString();
+            }
         }
 
         private void OnItemsSet()
         {
-            selectedItemCaption.Text = Items.First();
+            selectedItemCaption.Text = Items.First().ToString();
         }
 
-        private void SelectedItemChanged(object itemKey)
+        private void SelectedItemChanged(Panel item)
         {
-            selectedItemCaption.Text = Items[(itemKey as int?).Value];
+            selectedItemCaption.Text = Items[(item.Tag as int?).Value].ToString();
+            SelectedIndex = (item.Tag as int?).Value;
         }
 
         private void arrowBox_Click(object sender, EventArgs e)
@@ -92,8 +118,8 @@ namespace VKControls.VKComboBox
             flp.Left = Left;
             flp.Top = Top + Height - 1;
             flp.Width = selectItemPanel.Width + 4;
-            //flp.FlowDirection = FlowDirection.TopDown;
-            //flp.WrapContents = false;
+            flp.Height = 0;
+
             flp.MaximumSize = new Size(Width, 22 * 5);
             flp.HorizontalScroll.Enabled = false;
             flp.VerticalScroll.Visible = false;
@@ -136,12 +162,12 @@ namespace VKControls.VKComboBox
                 };
                 panelItem.Click += delegate (object s, EventArgs args)
                 {
-                    SelectedItemChanged(panelItem.Tag);
+                    SelectedItemChanged(panelItem);
                     Parent.Controls.RemoveByKey("DropDownList");
                 };
                 labelItem.Click += delegate (object s, EventArgs args)
                 {
-                    SelectedItemChanged(panelItem.Tag);
+                    SelectedItemChanged(panelItem);
                     Parent.Controls.RemoveByKey("DropDownList");
                 };
 
@@ -157,6 +183,15 @@ namespace VKControls.VKComboBox
         {
             /* Bedzie wywolane z OnPaint bo powoduje przerysowac caly Control */
             e.Graphics.DrawLine(new Pen(Color.Black, 2), new Point(Width - arrowBox.Width - 2, 0), new Point(Width - arrowBox.Width - 2, Height));
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            arrowPanel.Size = new Size(Height, Height);
+            selectItemPanel.Size = new Size(Width - arrowPanel.Width - 5, Height);
+            selectedItemCaption.Left = 5;
+            selectedItemCaption.Top = Math.Abs(selectItemPanel.Height - selectedItemCaption.Height) / 2;
         }
     }
 }

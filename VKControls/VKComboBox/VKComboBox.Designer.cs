@@ -52,7 +52,7 @@ namespace VKControls.VKComboBox
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(1, 1);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(244, 29);
+            this.mainPanel.Size = new System.Drawing.Size(244, 33);
             this.mainPanel.TabIndex = 0;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
@@ -63,7 +63,7 @@ namespace VKControls.VKComboBox
             this.arrowPanel.Location = new System.Drawing.Point(211, 0);
             this.arrowPanel.Margin = new System.Windows.Forms.Padding(0);
             this.arrowPanel.Name = "arrowPanel";
-            this.arrowPanel.Size = new System.Drawing.Size(33, 29);
+            this.arrowPanel.Size = new System.Drawing.Size(33, 33);
             this.arrowPanel.TabIndex = 2;
             // 
             // arrowBox
@@ -74,7 +74,7 @@ namespace VKControls.VKComboBox
             this.arrowBox.Location = new System.Drawing.Point(0, 0);
             this.arrowBox.Margin = new System.Windows.Forms.Padding(0);
             this.arrowBox.Name = "arrowBox";
-            this.arrowBox.Size = new System.Drawing.Size(33, 29);
+            this.arrowBox.Size = new System.Drawing.Size(33, 33);
             this.arrowBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.arrowBox.TabIndex = 0;
             this.arrowBox.TabStop = false;
@@ -93,7 +93,7 @@ namespace VKControls.VKComboBox
             this.selectItemPanel.Location = new System.Drawing.Point(0, 0);
             this.selectItemPanel.Name = "selectItemPanel";
             this.selectItemPanel.Padding = new System.Windows.Forms.Padding(4, 1, 4, 1);
-            this.selectItemPanel.Size = new System.Drawing.Size(208, 29);
+            this.selectItemPanel.Size = new System.Drawing.Size(208, 33);
             this.selectItemPanel.TabIndex = 1;
             // 
             // selectedItemCaption
@@ -101,17 +101,18 @@ namespace VKControls.VKComboBox
             this.selectedItemCaption.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.selectedItemCaption.Enabled = false;
             this.selectedItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.selectedItemCaption.Location = new System.Drawing.Point(3, 4);
+            this.selectedItemCaption.Location = new System.Drawing.Point(3, 6);
             this.selectedItemCaption.Multiline = true;
             this.selectedItemCaption.Name = "selectedItemCaption";
             this.selectedItemCaption.ReadOnly = true;
             this.selectedItemCaption.Size = new System.Drawing.Size(200, 20);
             this.selectedItemCaption.TabIndex = 4;
+            this.selectedItemCaption.Text = "Hello world";
             // 
             // bottomPanel
             // 
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomPanel.Location = new System.Drawing.Point(5, 27);
+            this.bottomPanel.Location = new System.Drawing.Point(5, 31);
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(198, 1);
             this.bottomPanel.TabIndex = 3;
@@ -129,7 +130,7 @@ namespace VKControls.VKComboBox
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.rightPanel.Location = new System.Drawing.Point(203, 1);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(1, 27);
+            this.rightPanel.Size = new System.Drawing.Size(1, 31);
             this.rightPanel.TabIndex = 1;
             // 
             // leftPanel
@@ -137,18 +138,19 @@ namespace VKControls.VKComboBox
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(4, 1);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(1, 27);
+            this.leftPanel.Size = new System.Drawing.Size(1, 31);
             this.leftPanel.TabIndex = 0;
             // 
             // VKComboBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "VKComboBox";
             this.Padding = new System.Windows.Forms.Padding(1);
-            this.Size = new System.Drawing.Size(246, 31);
+            this.Size = new System.Drawing.Size(246, 35);
             this.mainPanel.ResumeLayout(false);
             this.arrowPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.arrowBox)).EndInit();

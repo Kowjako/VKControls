@@ -52,7 +52,7 @@ namespace VKControls.VKProgressBar
         private const float startAngle = 270.0F;
         private Graphics g;
         private Pen pen = new Pen(new SolidBrush(Color.Black), 2), 
-                    fillingPen = new Pen(new SolidBrush(Color.Gainsboro), 3);
+                    fillingPen = new Pen(new SolidBrush(Color.Gainsboro), 2);
 
         public VKProgressBar()
         {
