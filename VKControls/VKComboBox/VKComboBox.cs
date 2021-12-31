@@ -176,6 +176,7 @@ namespace VKControls.VKComboBox
             }
 
             Parent.Controls.Add(flp);
+            Parent.Controls.SetChildIndex(flp, -1);
             flp.Show();
         }
 

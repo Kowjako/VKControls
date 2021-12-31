@@ -89,6 +89,12 @@
     <Compile Include="VKProgressBar\VKProgressBar.Designer.cs">
       <DependentUpon>VKProgressBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="VKStepProgressBar\VKStepProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VKStepProgressBar\VKStepProgressBar.Designer.cs">
+      <DependentUpon>VKStepProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="VKTextBox\VKFlatTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <EmbeddedResource Include="VKProgressBar\VKProgressBar.resx">
       <DependentUpon>VKProgressBar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VKStepProgressBar\VKStepProgressBar.resx">
+      <DependentUpon>VKStepProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VKTextBox\VKFlatTextBox.resx">
       <DependentUpon>VKFlatTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +135,6 @@
   <ItemGroup>
     <None Include="Resources\checked.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="VKStepProgressBar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
