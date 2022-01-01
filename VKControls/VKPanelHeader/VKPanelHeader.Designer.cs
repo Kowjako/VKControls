@@ -31,9 +31,9 @@ namespace VKControls.VKPanelHeader
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VKPanelHeader));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.headerLabel = new System.Windows.Forms.Label();
             this.bClose = new System.Windows.Forms.PictureBox();
             this.bMinimize = new System.Windows.Forms.PictureBox();
-            this.headerLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
@@ -49,6 +49,19 @@ namespace VKControls.VKPanelHeader
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(692, 50);
             this.mainPanel.TabIndex = 0;
+            this.mainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseDown);
+            this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
+            // 
+            // headerLabel
+            // 
+            this.headerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Location = new System.Drawing.Point(22, 19);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(90, 13);
+            this.headerLabel.TabIndex = 2;
+            this.headerLabel.Text = "Application Name";
             // 
             // bClose
             // 
@@ -79,17 +92,6 @@ namespace VKControls.VKPanelHeader
             this.bMinimize.TabIndex = 0;
             this.bMinimize.TabStop = false;
             this.bMinimize.Click += new System.EventHandler(this.bMinimize_Click);
-            // 
-            // headerLabel
-            // 
-            this.headerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.headerLabel.AutoSize = true;
-            this.headerLabel.Location = new System.Drawing.Point(22, 19);
-            this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(90, 13);
-            this.headerLabel.TabIndex = 2;
-            this.headerLabel.Text = "Application Name";
             // 
             // VKPanelHeader
             // 

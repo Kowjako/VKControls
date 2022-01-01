@@ -57,8 +57,9 @@ namespace TestApp
             // vkPanelHeader1
             // 
             this.vkPanelHeader1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.vkPanelHeader1.HeaderColor = System.Drawing.Color.Gray;
-            this.vkPanelHeader1.HeaderText = "MyApplication";
+            this.vkPanelHeader1.HeaderColor = System.Drawing.Color.Yellow;
+            this.vkPanelHeader1.HeaderFont = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vkPanelHeader1.HeaderText = "DiffChecker by @maybedot";
             this.vkPanelHeader1.Location = new System.Drawing.Point(0, 0);
             this.vkPanelHeader1.Name = "vkPanelHeader1";
             this.vkPanelHeader1.Size = new System.Drawing.Size(1172, 50);
@@ -73,6 +74,7 @@ namespace TestApp
             this.Controls.Add(this.vkPanelHeader1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Testowa platforma";
             this.ResumeLayout(false);
