@@ -53,6 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animations.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="VKButtons\VKFlatButtonWithImage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -60,11 +65,6 @@
       <DependentUpon>VKFlatButtonWithImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="VKButtons\VKRoundedButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="VKComboBox\VKComboBox.Designer.cs">
       <DependentUpon>VKComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VKPanelHeader\VKPanelHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VKPanelHeader\VKPanelHeader.Designer.cs">
+      <DependentUpon>VKPanelHeader.cs</DependentUpon>
     </Compile>
     <Compile Include="VKProgressBar\VKProgressBar.cs">
       <SubType>UserControl</SubType>
@@ -119,6 +125,9 @@
     <EmbeddedResource Include="VKComboBox\VKComboBox.resx">
       <DependentUpon>VKComboBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VKPanelHeader\VKPanelHeader.resx">
+      <DependentUpon>VKPanelHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VKProgressBar\VKProgressBar.resx">
       <DependentUpon>VKProgressBar.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +144,15 @@
   <ItemGroup>
     <None Include="Resources\checked.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="VKSwitch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
