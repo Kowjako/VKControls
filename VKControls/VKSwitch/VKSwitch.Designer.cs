@@ -37,17 +37,18 @@ namespace VKControls.VKSwitch
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(231, 77);
+            this.mainPanel.Size = new System.Drawing.Size(63, 26);
             this.mainPanel.TabIndex = 0;
+            this.mainPanel.Click += new System.EventHandler(this.mainPanel_Click);
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            this.mainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mainPanel_MouseMove);
             // 
             // VKSwitch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.mainPanel);
             this.Name = "VKSwitch";
-            this.Size = new System.Drawing.Size(231, 77);
+            this.Size = new System.Drawing.Size(63, 26);
             this.ResumeLayout(false);
 
         }
