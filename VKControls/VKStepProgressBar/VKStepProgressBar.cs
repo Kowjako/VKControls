@@ -32,6 +32,12 @@ namespace VKControls.VKStepProgressBar
             control.Invalidate();
         };
 
+        public Color LineColor { get; set; } = Color.Gray;
+        public Color SuccessLineColor { get; set; } = Color.Green;
+        public Color WaitingStateColor { get; set; } = Color.Green;
+        public Color DoneStateColor { get; set; } = Color.Purple;
+        public Color EllipseColor { get; set; } = Color.Gray;
+
         private Collection<string> _stateNames = new Collection<string>();
         public Collection<string> StateNames
         {
@@ -97,10 +103,10 @@ namespace VKControls.VKStepProgressBar
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
                 /* Draw ellipses */
-                e.Graphics.DrawEllipse(new Pen(new SolidBrush(Color.Gray), 2), new Rectangle(3 + xOffset, 3, _borderSize, _borderSize));
+                e.Graphics.DrawEllipse(new Pen(new SolidBrush(EllipseColor), 2), new Rectangle(3 + xOffset, 3, _borderSize, _borderSize));
                 if (i < _actualStateIndex)
                 {
-                    e.Graphics.FillEllipse(new SolidBrush(Color.Purple), new Rectangle(3 + xOffset, 3, _borderSize, _borderSize));
+                    e.Graphics.FillEllipse(new SolidBrush(DoneStateColor), new Rectangle(3 + xOffset, 3, _borderSize, _borderSize));
                     e.Graphics.DrawLines(new Pen(new SolidBrush(Color.White), 4), new Point[]
                     {
                           /* Drawing done mark */
@@ -109,12 +115,12 @@ namespace VKControls.VKStepProgressBar
                           new Point(41 +xOffset, 18)
                     });
                     if(i != StatesCount - 1)
-                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Green), 2), new Point(53 + xOffset, 27), new Point(53 + xOffset + 70, 27));
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(SuccessLineColor), 2), new Point(53 + xOffset, 27), new Point(53 + xOffset + 70, 27));
                 }
                 else
                 {
                     if(i != StatesCount - 1)
-                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Gray), 2), new Point(53 + xOffset, 27), new Point(53 + xOffset + 70, 27));
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(LineColor), 2), new Point(53 + xOffset, 27), new Point(53 + xOffset + 70, 27));
                 }
 
                 if (i == _actualStateIndex)
@@ -124,14 +130,12 @@ namespace VKControls.VKStepProgressBar
                         case StepState.Undefined:
                             break;
                         case StepState.Waiting:
-                            e.Graphics.DrawArc(new Pen(new SolidBrush(Color.Green), 10), new Rectangle(8 + xOffset, 8, 40, 40), 0F, 360F);
+                            e.Graphics.DrawArc(new Pen(new SolidBrush(WaitingStateColor), 10), new Rectangle(8 + xOffset, 8, 40, 40), 0F, 360F);
                             break;
                         default:
                             break;
                     }
                 }
-
-                
 
                 /* Draw names */
                 if (_stateNames != null && _stateNames.Any())
