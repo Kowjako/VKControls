@@ -60,6 +60,7 @@ namespace VKControls.VKStepProgressBar
                 if(_statesCount >= 1)
                 {
                     _statesCount = value;
+                    this.Width = 120 * _statesCount;
                     OnContentChanged(this);
                 }
             }
