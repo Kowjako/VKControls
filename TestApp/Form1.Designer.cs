@@ -30,39 +30,49 @@ namespace TestApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.vkFlatButtonWithImage1 = new VKControls.VKButtons.VKFlatButtonWithImage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.vkPanelHeader1 = new VKControls.VKPanelHeader.VKPanelHeader();
             this.SuspendLayout();
             // 
-            // timer1
+            // button1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.button1.Location = new System.Drawing.Point(64, 217);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // vkFlatButtonWithImage1
+            // button2
             // 
-            this.vkFlatButtonWithImage1.BorderButtonBrush = System.Drawing.Color.Black;
-            this.vkFlatButtonWithImage1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("vkFlatButtonWithImage1.ButtonImage")));
-            this.vkFlatButtonWithImage1.ButtonName = "Angular 6";
-            this.vkFlatButtonWithImage1.ButtonNameColor = System.Drawing.SystemColors.ControlText;
-            this.vkFlatButtonWithImage1.ButtonNameFont = new System.Drawing.Font("Lucida Console", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vkFlatButtonWithImage1.FirstGradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.vkFlatButtonWithImage1.Location = new System.Drawing.Point(12, 12);
-            this.vkFlatButtonWithImage1.MaximumSize = new System.Drawing.Size(200, 170);
-            this.vkFlatButtonWithImage1.MinimumSize = new System.Drawing.Size(200, 170);
-            this.vkFlatButtonWithImage1.Name = "vkFlatButtonWithImage1";
-            this.vkFlatButtonWithImage1.SecondGradientColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.vkFlatButtonWithImage1.Size = new System.Drawing.Size(200, 170);
-            this.vkFlatButtonWithImage1.TabIndex = 0;
-            this.vkFlatButtonWithImage1.Click += new System.EventHandler(this.vkFlatButtonWithImage1_Click_1);
+            this.button2.Location = new System.Drawing.Point(169, 217);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // vkPanelHeader1
+            // 
+            this.vkPanelHeader1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vkPanelHeader1.HeaderColor = System.Drawing.Color.Gray;
+            this.vkPanelHeader1.HeaderText = "MyApplication";
+            this.vkPanelHeader1.Location = new System.Drawing.Point(0, 0);
+            this.vkPanelHeader1.Name = "vkPanelHeader1";
+            this.vkPanelHeader1.Size = new System.Drawing.Size(1172, 50);
+            this.vkPanelHeader1.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1089, 696);
-            this.Controls.Add(this.vkFlatButtonWithImage1);
+            this.ClientSize = new System.Drawing.Size(1172, 696);
+            this.Controls.Add(this.vkPanelHeader1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Testowa platforma";
             this.ResumeLayout(false);
@@ -71,7 +81,9 @@ namespace TestApp
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private VKControls.VKButtons.VKFlatButtonWithImage vkFlatButtonWithImage1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private VKControls.VKPanelHeader.VKPanelHeader vkPanelHeader1;
     }
 }
 

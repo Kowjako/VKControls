@@ -16,20 +16,5 @@ namespace TestApp
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            var btn = new VKControls.VKButtons.VKRoundedButton();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
     }
 }
