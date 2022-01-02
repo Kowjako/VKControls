@@ -22,6 +22,8 @@ namespace VKControls.VKSwitch
         public Color BorderColor { get; set; } = Color.Green;
         public Color EnabledColor { get; set; } = Color.Lime;
 
+        public bool Switched => _isEnabled;
+
         /* enabled => switch on right side */
         private bool _isEnabled = true;
 
