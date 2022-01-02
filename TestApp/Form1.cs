@@ -16,5 +16,16 @@ namespace TestApp
         {
             InitializeComponent();
         }
+
+        private void vkPanelHeader1_MenuClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("HELLO WORLD");
+        }
+
+        private void vkRoundedButton1_Load(object sender, EventArgs e)
+        {
+            vkStepProgressBar1.SetStepState(VKControls.VKStepProgressBar.StepState.Waiting);
+            vkStepProgressBar1.SetStepState(VKControls.VKStepProgressBar.StepState.Done);
+        }
     }
 }
