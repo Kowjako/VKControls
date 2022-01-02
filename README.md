@@ -1,6 +1,9 @@
 # VKControls — Biblioteka User Controls dla Windows Forms 👽  
 Opracowanie moich własnych UserControl'ów dla technologii Winforms, kod źródłowy tych kontrolek oraz aplikcja testowa do jakiej te kontrolki już zaimportowane. Wszystkie kontrolki zostały napisane samodzielnie.
 
+# Review — wszystkie zaimplementowane kontrolki  
+![Screenshot_4](https://user-images.githubusercontent.com/19534189/147875830-30aef851-0dbf-43c1-bc28-dbdd9d0523b5.png)
+
 # Dostępne kontrolki 🍓  
 - **VKFlatButtonWithImage**    
 ![Screenshot_1](https://user-images.githubusercontent.com/19534189/147850926-d18cd2ed-4ba2-4883-9aaf-374ce00a97d2.png)  
@@ -23,4 +26,9 @@ Okrągły ProgressBar
 - **VKFlatTextBox**  
 ![Screenshot_7](https://user-images.githubusercontent.com/19534189/147850940-c0dca29a-07ec-4c51-bab9-0d29b9e2901c.png)  
 Textbox z nowoczesnym interfejsem, zaimplementowana animacja po naciśnięciu oraz opuszczeniu kontrolki  
+- **VKSwitch**  
+![Screenshot_1](https://user-images.githubusercontent.com/19534189/147875825-c3f65074-cc3e-44dc-acda-f9a5e1172eb4.png)
+![Screenshot_2](https://user-images.githubusercontent.com/19534189/147875826-8ac9c215-ccc6-4ff2-8d73-ff25c7f73b6e.png)  
+- **VKPanelHeader**  
+Można zobaczyć na podsumowaniu wszystkich kontrolek.
 
