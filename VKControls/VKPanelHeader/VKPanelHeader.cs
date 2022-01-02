@@ -29,6 +29,19 @@ namespace VKControls.VKPanelHeader
             _menuImage = bMenu.Image.Clone() as Image;
         }
 
+        /* EventHandler to handle menu button click */
+        public event EventHandler MenuClick
+        {
+            add
+            {
+                bMenu.Click += value;
+            }
+            remove
+            {
+                bMenu.Click -= value;
+            }
+        }
+
         public Color HeaderColor { get; set; } = Color.Gray;
 
         public string HeaderText { get; set; }
