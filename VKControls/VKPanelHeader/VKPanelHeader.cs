@@ -15,10 +15,18 @@ namespace VKControls.VKPanelHeader
         private Point lastPoint;
         private Panel pLeft, pRight, pBottom;
 
+        private bool _isMenuOpened = false;
+        private readonly Timer Timer = new Timer { Interval = 1 };
+        private const float _fullAngle = 180.0F;
+        private float _actualAngle = 0.0F;
+        private Image _menuImage;
+
         public VKPanelHeader()
         {
             InitializeComponent();
             this.Dock = DockStyle.Top;
+            Timer.Tick += MenuBoxRotate;
+            _menuImage = bMenu.Image.Clone() as Image;
         }
 
         public Color HeaderColor { get; set; } = Color.Gray;
@@ -64,6 +72,11 @@ namespace VKControls.VKPanelHeader
             }
         }
 
+        private void bMenu_Click(object sender, EventArgs e)
+        {
+            Timer.Start();
+        }
+
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
@@ -93,6 +106,32 @@ namespace VKControls.VKPanelHeader
             Parent.Controls.Add(pLeft);
             Parent.Controls.Add(pBottom);
             Parent.Controls.Add(pRight);
+        }
+
+        private void MenuBoxRotate(object sender, EventArgs e)
+        {
+            _actualAngle += 5;
+            bMenu.Image = _isMenuOpened ? RotateImage(bMenu.Image, 5) : RotateImage(bMenu.Image, -5);
+
+            if (_actualAngle.Equals(_fullAngle))
+            {
+                _actualAngle = 0;
+                _isMenuOpened = !_isMenuOpened;
+                bMenu.Image = _menuImage;
+                Timer.Stop();
+            }
+        }
+
+        private Bitmap RotateImage(Image img, float angle)
+        {
+            var bitmap = new Bitmap(img.Width, img.Height);
+            bitmap.SetResolution(img.HorizontalResolution, img.VerticalResolution);
+            var graphics = Graphics.FromImage(bitmap);
+            graphics.TranslateTransform(img.Width / 2, img.Height / 2);
+            graphics.RotateTransform(angle);
+            graphics.TranslateTransform(-img.Width / 2, -img.Height / 2);
+            graphics.DrawImage(img, new PointF(0,0));
+            return bitmap;
         }
     }
 }

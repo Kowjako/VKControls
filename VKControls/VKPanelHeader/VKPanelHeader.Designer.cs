@@ -34,16 +34,16 @@ namespace VKControls.VKPanelHeader
             this.headerLabel = new System.Windows.Forms.Label();
             this.bClose = new System.Windows.Forms.PictureBox();
             this.bMinimize = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bMenu = new System.Windows.Forms.PictureBox();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.pictureBox1);
+            this.mainPanel.Controls.Add(this.bMenu);
             this.mainPanel.Controls.Add(this.headerLabel);
             this.mainPanel.Controls.Add(this.bClose);
             this.mainPanel.Controls.Add(this.bMinimize);
@@ -96,18 +96,19 @@ namespace VKControls.VKPanelHeader
             this.bMinimize.TabStop = false;
             this.bMinimize.Click += new System.EventHandler(this.bMinimize_Click);
             // 
-            // pictureBox1
+            // bMenu
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.bMenu.BackColor = System.Drawing.Color.Transparent;
+            this.bMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bMenu.Image = ((System.Drawing.Image)(resources.GetObject("bMenu.Image")));
+            this.bMenu.Location = new System.Drawing.Point(0, 0);
+            this.bMenu.Name = "bMenu";
+            this.bMenu.Size = new System.Drawing.Size(50, 50);
+            this.bMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bMenu.TabIndex = 3;
+            this.bMenu.TabStop = false;
+            this.bMenu.Click += new System.EventHandler(this.bMenu_Click);
             // 
             // VKPanelHeader
             // 
@@ -120,7 +121,7 @@ namespace VKControls.VKPanelHeader
             this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +132,6 @@ namespace VKControls.VKPanelHeader
         private System.Windows.Forms.PictureBox bMinimize;
         private System.Windows.Forms.PictureBox bClose;
         private System.Windows.Forms.Label headerLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox bMenu;
     }
 }
